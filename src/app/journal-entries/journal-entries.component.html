@@ -1,0 +1,9 @@
+<h2>Journal Entries</h2>
+
+<div *ngFor="let journalEntry of journalEntries">
+    <p>Title: {{ journalEntry.Title }}</p>
+    <p>Text: {{ journalEntry.Text }}</p>
+    <p>Created on: {{ journalEntry.CreatedAt | date: 'fullDate' }}</p>
+    <br />
+    <br />
+</div>
