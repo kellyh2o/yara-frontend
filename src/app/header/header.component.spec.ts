@@ -8,9 +8,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,12 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have a title', () => {
+    expect(component.title).toBe('Y A R A');
+  });
+
+  it('should have a sub title', () => {
+    expect(component.subTitle).toBe('Yet Another Reflection App');
   });
 });
+

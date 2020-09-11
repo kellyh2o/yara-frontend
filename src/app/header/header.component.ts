@@ -8,10 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   
   // This is the kind of component that expects to receive some kind of input
-
-  @Input() title: string;
-  @Input() subTitle: string;
   @Input() isAuth: boolean;
+
+  title = 'Y A R A';
+  subTitle = 'Yet Another Reflection App'
 
   constructor() { }
 

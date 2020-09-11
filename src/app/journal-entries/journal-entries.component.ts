@@ -11,6 +11,7 @@ export class JournalEntriesComponent implements OnInit {
 
   @Input() journalEntries: JournalEntry[]
 
+  pageTitle = 'Journal Entries';
 
   constructor() { }
 
