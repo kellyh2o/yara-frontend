@@ -6,8 +6,12 @@
             <tr *ngFor="let journalEntry of journalEntries">
                 <td>
                     <div>
-                        <p class="journal-title">{{ journalEntry.title }}</p>
-                        <p>{{ journalEntry.createdAt | date: 'MMM d, y, h:mm a' }}</p>
+                        <p class="journal-title">
+                            {{ journalEntry.title }}
+                        </p>
+                        <p class="journal-date">
+                            {{ journalEntry.createdAt | date: 'MMM d, y, h:mm a' }}
+                        </p>
                     </div>
                     
                 </td>
