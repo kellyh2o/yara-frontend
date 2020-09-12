@@ -9,3 +9,8 @@
   margin: auto;
   width: 90%;
 }
+
+.table th, .table td {
+  border-top: none;
+  border-bottom: 1px solid #dee2e6;
+}

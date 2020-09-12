@@ -4,16 +4,16 @@
     <table class="table">
         <tbody>
             <tr *ngFor="let journalEntry of journalEntries">
-                <th>
+                <td>
                     <div>
-                        <p>{{ journalEntry.title }}</p>
+                        <p class="journal-title">{{ journalEntry.title }}</p>
                         <p>{{ journalEntry.createdAt | date: 'MMM d, y, h:mm a' }}</p>
                     </div>
                     
-                </th>
-                <th>
+                </td>
+                <td>
                     {{ journalEntry.text }}
-                </th>
+                </td>
             </tr>
         </tbody>
     </table>
