@@ -1,4 +1,4 @@
-<ul ngbNav [activeId]="route.fragment | async" class="nav-tabs nav-bar">
+<!-- <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs nav-bar">
     <li ngbNavItem="/">
       <a ngbNavLink routerLink="/" class="navbar-brand">{{ title }}</a>
     </li>
@@ -10,5 +10,18 @@
         >{{ link.title }}</a
       >
     </li>
-  </ul>
+  </ul> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand app-title">Y A R A</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">New Entry</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">User Profile</button>
+    </div>
+  </nav>
