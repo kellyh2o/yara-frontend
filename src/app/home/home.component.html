@@ -2,6 +2,7 @@
 
 <!-- body -->
 
-<app-journal-entries></app-journal-entries>
+<app-journal-entries *ngIf="showEntries$ | async"></app-journal-entries>
+<app-create-entry *ngIf="showNewEntryForm$ | async"></app-create-entry>
 
 <!-- body end -->

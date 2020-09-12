@@ -1,5 +1,21 @@
-<h2>{{ pageTitle }}</h2>
 
-<input width="500" />
-<button>Save</button>
-<button>Cancel</button>
+
+<div class="container-width-full">
+    <form class="new-entry-form" [formGroup]="newEntryForm" autocomplete="off">
+        <div class="form-group">
+          <label for="password">New Entry</label>
+          <div class="input-group">
+            <textarea class="form-control span6" rows="10" placeholder="Whats up?"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-success mr-sm-2" (click)="submit()">
+            Save
+          </button>
+          <button type="submit" class="btn btn-outline-success" (click)="submit()">
+            Cancel
+          </button>
+        </div>
+    </form>
+</div>
+  

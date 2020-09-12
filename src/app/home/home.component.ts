@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { ApplicationState } from '../store/state/application-state.model';
+import { getShowEntries, getShowNewEntryForm } from '../store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {}
+  showEntries$: Observable<boolean>;
+  showNewEntryForm$: Observable<boolean>;
 
-  ngOnInit(): void {}
+  constructor(private store$: Store<ApplicationState>) {}
+
+  ngOnInit(): void {
+    this.showEntries$ = this.store$.pipe(select(getShowEntries));
+    this.showNewEntryForm$ = this.store$.pipe(select(getShowNewEntryForm));
+  }
 }

@@ -15,7 +15,6 @@ import {
 })
 export class JournalEntriesComponent implements OnInit {
 
-  pageTitle: 'Journal Entries';
   journalEntries: JournalEntry[] = ENTRIES;
 
   @ViewChildren(SortableHeaderDirective) headers: QueryList<
