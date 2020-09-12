@@ -17,13 +17,5 @@ describe('HeaderComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  it('should have a title', () => {
-    expect(component.title).toBe('Y A R A');
-  });
-
-  it('should have a sub title', () => {
-    expect(component.subTitle).toBe('Yet Another Reflection App');
-  });
 });
 

@@ -1,9 +1,11 @@
 <h2>{{ pageTitle }}</h2>
 
-<div *ngFor="let journalEntry of journalEntries">
-    <p>Title: {{ journalEntry.Title }}</p>
-    <p>Text: {{ journalEntry.Text }}</p>
-    <p>Created on: {{ journalEntry.CreatedAt | date: 'fullDate' }}</p>
-    <br />
-    <br />
+<div class="container-width-full">
+    <div *ngFor="let journalEntry of journalEntries">
+        <p>Title: {{ journalEntry.title }}</p>
+        <p>Text: {{ journalEntry.text }}</p>
+        <p>Created on: {{ journalEntry.createdAt | date: 'fullDate' }}</p>
+        <br />
+        <br />
+    </div>
 </div>
