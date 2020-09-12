@@ -8,7 +8,8 @@ export const initialState: JournalState = {
 
 const reducer = createReducer(
   initialState,
-  on(createNewEntry, (state) => ({ ...state, showEntries: false }))
+  on(createNewEntry, (state) => ({ ...state, showEntries: false })),
+  on(cancelNewEntry, (state) => ({ ...state, showEntries: true }))
 );
 
 export function journalReducer(state: JournalState | undefined, action: Action) {

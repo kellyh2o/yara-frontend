@@ -23,6 +23,6 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    this.store$.dispatch(createNewEntry())
+    this.store$.dispatch(createNewEntry());
   }
 }
