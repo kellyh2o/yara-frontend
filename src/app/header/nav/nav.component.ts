@@ -13,7 +13,7 @@ interface NavLinks {
 })
 export class NavComponent implements OnInit {
   title = 'Y A R A';
-  links: NavLinks[] = [{ title: 'Dashboard', fragment: '/' }];
+  links: NavLinks[] = [{ title: 'Dashboard', fragment: '/' }, { title: 'Create New', fragment: '/'}];
 
   constructor(public route: ActivatedRoute) {}
 

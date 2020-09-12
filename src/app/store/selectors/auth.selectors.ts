@@ -7,3 +7,7 @@ export const getIsAuth = createSelector(
   authState,
   ({ isAuth }: AuthState) => isAuth
 );
+export const getShowLogin = createSelector(
+  authState,
+  ({ isAuth }: AuthState) => !isAuth
+);
