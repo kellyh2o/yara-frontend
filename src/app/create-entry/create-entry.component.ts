@@ -13,7 +13,11 @@ export class CreateEntryComponent implements OnInit {
 
   newEntryForm: FormGroup;
 
-  constructor(private store$: Store<ApplicationState>) { }
+  constructor(private fb: FormBuilder, private store$: Store<ApplicationState>) {
+    this.newEntryForm = this.fb.group({
+      entry: ''
+    })
+   }
 
   ngOnInit(): void {
   }
