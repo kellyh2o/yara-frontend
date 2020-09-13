@@ -39,7 +39,7 @@ describe('AppComponent', () => {
     });
   });
 
-  it('isAuth should return true if the user is not logged in', (done) => {
+  it('isAuth should return true if the user is logged in', (done) => {
     mockGetIsAuthSelector.setResult(true);
     mockStore.refreshState();
     fixture.detectChanges();

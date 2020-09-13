@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { JournalEntriesComponent } from './journal-entries.component';
+import { ENTRIES } from './journal-entries';
 
 describe('JournalEntriesComponent', () => {
   let component: JournalEntriesComponent;
@@ -19,5 +20,7 @@ describe('JournalEntriesComponent', () => {
     fixture.detectChanges();
   });
 
-
+  it('should display a list of journal entries', () => {
+    expect(component.journalEntries).toEqual(ENTRIES)
+  })
 });
