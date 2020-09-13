@@ -19,7 +19,5 @@ describe('JournalEntriesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have a page title', () => {
-    expect(component.pageTitle).toBe('Journal Entries');
-  });
+
 });

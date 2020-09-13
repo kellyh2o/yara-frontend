@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { CreateEntryComponent } from './create-entry.component';
 
@@ -8,9 +10,9 @@ describe('CreateEntryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateEntryComponent ]
-    })
-    .compileComponents();
+      declarations: [CreateEntryComponent],
+      providers: [FormBuilder, provideMockStore()],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +21,7 @@ describe('CreateEntryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have a page title', () => {
-    expect(component.pageTitle).toBe('Create Journal Entry');
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

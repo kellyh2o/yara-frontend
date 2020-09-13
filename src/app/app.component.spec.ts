@@ -1,31 +1,71 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
+
 import { AppComponent } from './app.component';
+import { MemoizedSelector } from '@ngrx/store';
+import { AuthState } from './store/state/auth-state.model';
+import { getIsAuth, getShowLogin } from './store';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let mockStore: MockStore;
+  let mockGetIsAuthSelector: MemoizedSelector<AuthState, boolean>;
+  let mockGetShowLoginSelector: MemoizedSelector<AuthState, boolean>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      providers: [provideMockStore()],
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    mockStore = TestBed.inject(MockStore);
+    mockGetIsAuthSelector = mockStore.overrideSelector(getIsAuth, false);
+    mockGetShowLoginSelector = mockStore.overrideSelector(getShowLogin, false);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  // it(`should have as title 'class-app'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('class-app');
-  // });
+  it('isAuth should return false if the user is not logged in', (done) => {
+    mockGetIsAuthSelector.setResult(false);
+    mockStore.refreshState();
+    fixture.detectChanges();
+    component.isAuth$.subscribe((isAuth) => {
+      expect(isAuth).toBeFalsy();
+      done();
+    });
+  });
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('class-app app is running!');
-  // });
+  it('isAuth should return true if the user is not logged in', (done) => {
+    mockGetIsAuthSelector.setResult(true);
+    mockStore.refreshState();
+    fixture.detectChanges();
+    component.isAuth$.subscribe((isAuth) => {
+      expect(isAuth).toBeTruthy();
+      done();
+    });
+  });
+
+  it('showLogin should return false if the user is logged in', (done) => {
+    mockGetShowLoginSelector.setResult(false);
+    mockStore.refreshState();
+    fixture.detectChanges();
+    component.showLogin$.subscribe((showLogin) => {
+      expect(showLogin).toBeFalsy();
+      done();
+    });
+  });
+
+  it('showLogin should return true if the user is not logged in', (done) => {
+    mockGetShowLoginSelector.setResult(true);
+    mockStore.refreshState();
+    fixture.detectChanges();
+    component.showLogin$.subscribe((showLogin) => {
+      expect(showLogin).toBeTruthy();
+      done();
+    });
+  });
 });

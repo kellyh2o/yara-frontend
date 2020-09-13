@@ -18,7 +18,7 @@ export class NavComponent implements OnInit {
   title = 'Y A R A';
   links: NavLinks[] = [{ title: 'Dashboard', fragment: '/' }, { title: 'Create New', fragment: '/'}];
 
-  constructor(public route: ActivatedRoute, private store$: Store<ApplicationState>) {}
+  constructor(private store$: Store<ApplicationState>) {}
 
   ngOnInit(): void {}
 
