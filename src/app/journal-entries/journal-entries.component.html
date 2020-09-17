@@ -2,7 +2,7 @@
 <div class="container-width-full">
     <table class="table">
         <tbody>
-            <tr *ngFor="let journalEntry of journalEntries">
+            <tr *ngFor="let journalEntry of journalEntries$ | async">
                 <td>
                     <div>
                         <p class="journal-title">
