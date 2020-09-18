@@ -1,31 +1,31 @@
 import { Component, OnInit, ViewChildren, QueryList, Input } from '@angular/core';
-import { JournalEntry } from '../models/journal-entry.model';
+import { Reflection } from '../models/reflection.model';
 import {
   SortableHeaderDirective,
   SortEvent,
   SortDirection,
   compare
 } from './components/directives/sortable-header.directive';
-import { JournalService } from '../services/journal.service';
+import { ReflectionService } from '../services/reflection.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-journal-entries',
-  templateUrl: './journal-entries.component.html',
-  styleUrls: ['./journal-entries.component.scss']
+  selector: 'app-reflections',
+  templateUrl: './reflections.component.html',
+  styleUrls: ['./reflections.component.scss']
 })
-export class JournalEntriesComponent implements OnInit {
+export class ReflectionsComponent implements OnInit {
 
-  journalEntries$: Observable<JournalEntry[]>;
+  reflections$: Observable<Reflection[]>;
 
   // @ViewChildren(SortableHeaderDirective) headers: QueryList<
   //   SortableHeaderDirective
   // >;
 
-  constructor(private journalService: JournalService) {}
+  constructor(private reflectionService: ReflectionService) {}
 
   ngOnInit(): void {
-    this.journalEntries$ = this.journalService.getJournalEntries();
+    this.reflections$ = this.reflectionService.getReflections();
   }
 
   onSort({ column, direction }: SortEvent) {

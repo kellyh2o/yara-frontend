@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { ApplicationState } from '../store/state/application-state.model';
-import { getShowEntries, getShowNewEntryForm } from '../store';
+import { getShowReflections, getShowNewReflectionForm } from '../store';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,13 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  showEntries$: Observable<boolean>;
-  showNewEntryForm$: Observable<boolean>;
+  showReflections$: Observable<boolean>;
+  showNewReflectionForm$: Observable<boolean>;
 
   constructor(private store$: Store<ApplicationState>) {}
 
   ngOnInit(): void {
-    this.showEntries$ = this.store$.pipe(select(getShowEntries));
-    this.showNewEntryForm$ = this.store$.pipe(select(getShowNewEntryForm));
+    this.showReflections$ = this.store$.pipe(select(getShowReflections));
+    this.showNewReflectionForm$ = this.store$.pipe(select(getShowNewReflectionForm));
   }
 }

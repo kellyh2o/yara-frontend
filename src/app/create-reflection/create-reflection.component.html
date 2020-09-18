@@ -1,11 +1,11 @@
 
 
 <div class="container-width-full">
-    <form class="new-entry-form" [formGroup]="newEntryForm" autocomplete="off">
+    <form class="new-reflection-form" [formGroup]="newReflectionForm" autocomplete="off">
         <div class="form-group">
-          <label for="password">New Entry</label>
+          <label>New Reflection</label>
           <div class="input-group">
-            <textarea id="entry" class="form-control span6" rows="10" placeholder="Whats up?"></textarea>
+            <textarea id="reflection" class="form-control span6" rows="10" placeholder="What's on your mind?"></textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-outline-success mr-sm-2" (click)="submit()">

@@ -2,20 +2,20 @@
 <div class="container-width-full">
     <table class="table">
         <tbody>
-            <tr *ngFor="let journalEntry of journalEntries$ | async">
+            <tr *ngFor="let reflection of reflections$ | async">
                 <td>
                     <div>
-                        <p class="journal-title">
-                            {{ journalEntry.title }}
+                        <p class="reflection-title">
+                            {{ reflection.title }}
                         </p>
-                        <p class="journal-date">
-                            {{ journalEntry.createdAt | date: 'MMM d, y, h:mm a' }}
+                        <p class="reflection-date">
+                            {{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}
                         </p>
                     </div>
                     
                 </td>
                 <td>
-                    {{ journalEntry.text }}
+                    {{ reflection.text }}
                 </td>
             </tr>
         </tbody>

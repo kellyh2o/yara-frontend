@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ApplicationState } from '../../store/state/application-state.model';
-import { createNewEntry } from '../../store';
+import { createNewReflection } from '../../store';
 
 
 @Component({
@@ -17,6 +17,6 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    this.store$.dispatch(createNewEntry());
+    this.store$.dispatch(createNewReflection());
   }
 }

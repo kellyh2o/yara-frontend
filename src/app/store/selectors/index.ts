@@ -1,2 +1,2 @@
 export * from './auth.selectors';
-export * from './journal.selectors';
+export * from './reflection.selectors';

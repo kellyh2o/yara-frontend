@@ -1,8 +1,8 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { JournalEntry } from '../../../models/journal-entry.model';
+import { Reflection } from '../../../models/reflection.model';
 import { Guid } from 'guid-typescript';
 
-export type SortColumn = keyof JournalEntry | '';
+export type SortColumn = keyof Reflection | '';
 // export type SortDirection = 'asc' | 'desc' | '';
 export const enum SortDirection {
   ASC = 'asc',

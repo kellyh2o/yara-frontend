@@ -4,15 +4,15 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { HomeComponent } from './home.component';
 
 import { MemoizedSelector } from '@ngrx/store';
-import { JournalState } from '../store/state/journal-state.model';
-import { getShowEntries, getShowNewEntryForm } from '../store';
+import { ReflectionState } from '../store/state/reflection-state.model';
+import { getShowReflections, getShowNewReflectionForm } from '../store';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   let mockStore: MockStore;
-  let mockGetShowEntriesSelector: MemoizedSelector<JournalState, boolean>;
-  let mockGetShowNewEntrySelector: MemoizedSelector<JournalState, boolean>;
+  let mockGetShowReflectionsSelector: MemoizedSelector<ReflectionState, boolean>;
+  let mockGetShowNewReflectionSelector: MemoizedSelector<ReflectionState, boolean>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,49 +25,49 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     mockStore = TestBed.inject(MockStore);
-    mockGetShowEntriesSelector = mockStore.overrideSelector(getShowEntries, false);
-    mockGetShowNewEntrySelector = mockStore.overrideSelector(getShowNewEntryForm, false);
+    mockGetShowReflectionsSelector = mockStore.overrideSelector(getShowReflections, false);
+    mockGetShowNewReflectionSelector = mockStore.overrideSelector(getShowNewReflectionForm, false);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
 
-  it('showEntries should return true if getShowEntries returns true', (done) => {
-    mockGetShowEntriesSelector.setResult(true);
+  it('showReflections should return true if getShowReflections returns true', (done) => {
+    mockGetShowReflectionsSelector.setResult(true);
     mockStore.refreshState();
     fixture.detectChanges();
-    component.showEntries$.subscribe((showEntries) => {
-      expect(showEntries).toBeTruthy();
+    component.showReflections$.subscribe((showReflections) => {
+      expect(showReflections).toBeTruthy();
       done();
     });
   });
 
-  it('showEntries should return false if getShowEntries returns false', (done) => {
-    mockGetShowEntriesSelector.setResult(false);
+  it('showReflections should return false if getShowReflections returns false', (done) => {
+    mockGetShowReflectionsSelector.setResult(false);
     mockStore.refreshState();
     fixture.detectChanges();
-    component.showEntries$.subscribe((showEntries) => {
-      expect(showEntries).toBeFalsy();
+    component.showReflections$.subscribe((showReflections) => {
+      expect(showReflections).toBeFalsy();
       done();
     });
   });
 
-  it('showNewEntryForm should return true if getShowNewEntryForm returns true', (done) => {
-    mockGetShowNewEntrySelector.setResult(true);
+  it('showNewReflectionForm should return true if getShowNewReflectionForm returns true', (done) => {
+    mockGetShowNewReflectionSelector.setResult(true);
     mockStore.refreshState();
     fixture.detectChanges();
-    component.showNewEntryForm$.subscribe((showEntries) => {
-      expect(showEntries).toBeTruthy();
+    component.showNewReflectionForm$.subscribe((showReflections) => {
+      expect(showReflections).toBeTruthy();
       done();
     });
   });
 
-  it('showNewEntryForm should return false if getShowNewEntryForm returns false', (done) => {
-    mockGetShowNewEntrySelector.setResult(false);
+  it('showNewReflectionForm should return false if getShowNewReflectionForm returns false', (done) => {
+    mockGetShowNewReflectionSelector.setResult(false);
     mockStore.refreshState();
     fixture.detectChanges();
-    component.showNewEntryForm$.subscribe((showEntries) => {
-      expect(showEntries).toBeFalsy();
+    component.showNewReflectionForm$.subscribe((showReflections) => {
+      expect(showReflections).toBeFalsy();
       done();
     });
   });

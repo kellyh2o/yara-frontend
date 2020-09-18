@@ -2,21 +2,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { CreateEntryComponent } from './create-entry.component';
+import { CreateReflectionComponent } from './create-reflection.component';
 
-describe('CreateEntryComponent', () => {
-  let component: CreateEntryComponent;
-  let fixture: ComponentFixture<CreateEntryComponent>;
+describe('CreateReflectionComponent', () => {
+  let component: CreateReflectionComponent;
+  let fixture: ComponentFixture<CreateReflectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CreateEntryComponent],
+      declarations: [CreateReflectionComponent],
       providers: [FormBuilder, provideMockStore()],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateEntryComponent);
+    fixture = TestBed.createComponent(CreateReflectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

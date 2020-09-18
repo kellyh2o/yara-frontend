@@ -1,6 +1,6 @@
 import { Guid } from 'guid-typescript';
 
-export interface JournalResponse {
+export interface ReflectionResponse {
     id: Guid; 
     title: string;
     text: string;

@@ -1,7 +1,7 @@
 import { AuthState } from './auth-state.model';
-import { JournalState } from './journal-state.model';
+import { ReflectionState } from './reflection-state.model';
 
 export interface ApplicationState {
   readonly authState: AuthState;
-  readonly journalState: JournalState;
+  readonly reflectionState: ReflectionState;
 }

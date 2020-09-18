@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CreateEntryComponent } from './create-entry.component';
+import { CreateReflectionComponent } from './create-reflection.component';
 
-const components = [CreateEntryComponent];
+const components = [CreateReflectionComponent];
 
 @NgModule({
   declarations: [...components],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [...components],
 })
-export class CreateEntryModule {}
+export class CreateReflectionModule {}
