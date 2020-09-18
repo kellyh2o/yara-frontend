@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    console.log('submitted');
-    this.store$.dispatch(requestLogin());
+    const { username, password } = this.loginForm.value;
+    this.store$.dispatch(requestLogin({ username, password }));
   }
 }

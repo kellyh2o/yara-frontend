@@ -1,5 +1,5 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { JournalEntry } from '../../journal-entries';
+import { JournalEntry } from '../../../models/journal-entry.model';
 import { Guid } from 'guid-typescript';
 
 export type SortColumn = keyof JournalEntry | '';
