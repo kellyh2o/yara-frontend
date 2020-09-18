@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList, Input } from '@angular/core';
-import { JournalEntry } from './journal-entries';
+import { JournalEntry } from '../models/journal-entry.model';
 import {
   SortableHeaderDirective,
   SortEvent,
@@ -18,9 +18,9 @@ export class JournalEntriesComponent implements OnInit {
 
   journalEntries$: Observable<JournalEntry[]>;
 
-  @ViewChildren(SortableHeaderDirective) headers: QueryList<
-    SortableHeaderDirective
-  >;
+  // @ViewChildren(SortableHeaderDirective) headers: QueryList<
+  //   SortableHeaderDirective
+  // >;
 
   constructor(private journalService: JournalService) {}
 
@@ -28,7 +28,7 @@ export class JournalEntriesComponent implements OnInit {
     this.journalEntries$ = this.journalService.getJournalEntries();
   }
 
-  // onSort({ column, direction }: SortEvent) {
+  onSort({ column, direction }: SortEvent) {
   //   // resetting other headers
   //   this.headers.forEach((header) => {
   //     if (header.sortable !== column) {
@@ -45,5 +45,5 @@ export class JournalEntriesComponent implements OnInit {
   //       return direction === SortDirection.ASC ? res : -res;
   //     });
   //   }
-  // }
+  }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ApplicationState } from '../store/state/application-state.model';
-import { login } from '../store';
+import { requestLogin } from '../store';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +26,6 @@ export class LoginComponent implements OnInit {
 
   submit() {
     console.log('submitted');
-    this.store$.dispatch(login());
+    this.store$.dispatch(requestLogin());
   }
 }
