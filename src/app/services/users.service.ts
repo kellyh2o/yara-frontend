@@ -9,7 +9,7 @@ const GET_ME_URL = `${BASE_URL}/user`;
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UsersService {
   constructor(private http: HttpClient) { }
 
   getMe(): Observable<UserResponse> {

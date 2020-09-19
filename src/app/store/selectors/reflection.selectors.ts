@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
-import { ApplicationState } from '../state/application-state.model';
-import { ReflectionState } from '../state/reflection-state.model';
+import { ApplicationState } from '../models/application-state.model';
+import { ReflectionState } from '../models/reflection-state.model';
 
 export const reflectionState = ({ reflectionState }: ApplicationState) => reflectionState;
 export const getShowReflections = createSelector(

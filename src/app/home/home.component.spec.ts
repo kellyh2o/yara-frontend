@@ -4,7 +4,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { HomeComponent } from './home.component';
 
 import { MemoizedSelector } from '@ngrx/store';
-import { ReflectionState } from '../store/state/reflection-state.model';
+import { ReflectionState } from '../store/models/reflection-state.model';
 import { getShowReflections, getShowNewReflectionForm } from '../store';
 
 describe('HomeComponent', () => {

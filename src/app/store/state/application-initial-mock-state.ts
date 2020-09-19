@@ -1,4 +1,4 @@
-import { ApplicationState } from './application-state.model';
+import { ApplicationState } from '../models/application-state.model';
 import { AUTH_INITIAL_MOCK_STATE } from './auth-initial-mock-state';
 import { REFLECTION_INITIAL_MOCK_STATE } from './reflection-initial-mock-state';
 

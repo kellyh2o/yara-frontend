@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { ApplicationState } from '../store/state/application-state.model';
+import { ApplicationState } from '../store/models/application-state.model';
 import { getShowReflections, getShowNewReflectionForm } from '../store';
 import { Observable } from 'rxjs';
 

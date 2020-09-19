@@ -3,7 +3,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { AppComponent } from './app.component';
 import { MemoizedSelector } from '@ngrx/store';
-import { AuthState } from './store/state/auth-state.model';
+import { AuthState } from './store/models/auth-state.model';
 import { getIsAuth, getShowLogin } from './store';
 
 describe('AppComponent', () => {

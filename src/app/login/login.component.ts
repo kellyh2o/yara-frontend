@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { ApplicationState } from '../store/state/application-state.model';
+import { ApplicationState } from '../store/models/application-state.model';
 import { requestLogin } from '../store';
 
 @Component({

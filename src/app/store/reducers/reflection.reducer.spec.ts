@@ -1,4 +1,4 @@
-import { ReflectionState } from '../state/reflection-state.model';
+import { ReflectionState } from '../models/reflection-state.model';
 import { createNewReflection, cancelNewReflection, saveNewReflection } from '../actions/reflection.actions';
 import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 import { reflectionReducer } from './reflection.reducer';
