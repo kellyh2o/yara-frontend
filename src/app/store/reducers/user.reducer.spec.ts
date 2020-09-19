@@ -1,5 +1,5 @@
 import { UserState } from '../models/user-state.model';
-import { USER_INITIAL_MOCK_STATE } from '../user-initial-mock-state';
+import { USER_INITIAL_MOCK_STATE } from '../state/user-initial-mock-state';
 import { loadMe } from '../actions';
 import { userReducer } from './user.reducer';
 

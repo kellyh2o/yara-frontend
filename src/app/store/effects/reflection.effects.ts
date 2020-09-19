@@ -6,19 +6,22 @@ import {
     requestReflectionsFailure
 } from '../actions/reflection.actions';
 import { ReflectionService } from '../../services/reflection.service';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { ReflectionResponse } from '../../services/reflection-response.model';
 import { Injectable } from '@angular/core';
+import { ApplicationState } from '../models/application-state.model';
+import { getToken } from '..';
 
 @Injectable({ providedIn: 'root'})
 export class ReflectionEffects {
     requestReflections$ = createEffect(() => 
         this.actions$.pipe(
             ofType(requestReflections),
-            switchMap(({ userId }) => 
-                this.reflectionService.getReflections(userId).pipe(
-                    map(({ reflections }: ReflectionResponse ) => requestReflectionsSuccess({ reflections })),
+            withLatestFrom(this.store.select(getToken)),
+            switchMap(([action, token ]) =>
+                this.reflectionService.getReflections(token, '').pipe(
+                    map(( reflections : ReflectionResponse[] ) => requestReflectionsSuccess({ reflections })),
                     catchError((error) => of(requestReflectionsFailure({ error })))
                 )
             )
@@ -27,6 +30,7 @@ export class ReflectionEffects {
 
     constructor(
         private actions$: Actions,
-        private reflectionService: ReflectionService
+        private reflectionService: ReflectionService,
+        private store: Store<ApplicationState>,
     ) {}
 }

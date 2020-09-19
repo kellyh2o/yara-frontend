@@ -8,6 +8,9 @@ import {
 } from './components/directives/sortable-header.directive';
 import { ReflectionService } from '../services/reflection.service';
 import { Observable } from 'rxjs';
+import { ApplicationState } from '../store/models/application-state.model';
+import { Store } from '@ngrx/store';
+import { getReflections, requestReflections } from '../store';
 
 @Component({
   selector: 'app-reflections',
@@ -22,10 +25,14 @@ export class ReflectionsComponent implements OnInit {
   //   SortableHeaderDirective
   // >;
 
-  constructor(private reflectionService: ReflectionService) {}
+  constructor(
+    private reflectionService: ReflectionService,
+    private store$: Store<ApplicationState>
+    ) {}
 
   ngOnInit(): void {
-    this.reflections$ = this.reflectionService.getReflections();
+    this.reflections$ = this.store$.select(getReflections);
+    this.store$.dispatch(requestReflections())
   }
 
   onSort({ column, direction }: SortEvent) {

@@ -1,4 +1,5 @@
 import { createAction, props, union } from '@ngrx/store';
+import { Reflection } from 'src/app/models/reflection.model';
 
 export const createNewReflection = createAction(
     '[Reflections] Create New Reflection'
@@ -13,19 +14,30 @@ export const cancelNewReflection = createAction(
 );
 
 export const requestReflections = createAction(
-    '[API Reflections] Request Reflections',
-    props<{ userId: string}>()
+    '[API Reflections] Request Reflections'
 );
 
 export const requestReflectionsSuccess = createAction(
     '[API Reflections] Request Reflections Success',
-    props<{ userId: string}>()
+    props<{ reflections: Reflection[] }>()
 );
 
 export const requestReflectionsFailure = createAction(
     '[API Reflections] Request Reflections Failure',
-    props<{ userId: string}>()
+    props<{ error: any}>()
 );
+
+export const requestCreateNewReflection = createAction(
+    '[API Reflections] Request Create Reflection');
+
+export const requestCreateNewReflectionSuccess = createAction(
+    '[API Reflections] Request Create Reflection Success'
+);
+
+export const requestCreateNewReflectionFailure = createAction(
+    '[API Reflections] Request Create Reflection Failure'
+);
+
 
 const all = union({
     createNewReflection,
@@ -33,7 +45,10 @@ const all = union({
     cancelNewReflection,
     requestReflections,
     requestReflectionsSuccess,
-    requestReflectionsFailure
+    requestReflectionsFailure,
+    requestCreateNewReflection,
+    requestCreateNewReflectionSuccess,
+    requestCreateNewReflectionFailure
 });
 
 export type ReflectionActionsTypes = typeof all;
