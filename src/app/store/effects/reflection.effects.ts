@@ -20,7 +20,7 @@ export class ReflectionEffects {
             ofType(requestReflections),
             withLatestFrom(this.store.select(getToken)),
             switchMap(([action, token ]) =>
-                this.reflectionService.getReflections(token, '').pipe(
+                this.reflectionService.getReflections(token).pipe(
                     map(( reflections : ReflectionResponse[] ) => requestReflectionsSuccess({ reflections })),
                     catchError((error) => of(requestReflectionsFailure({ error })))
                 )
