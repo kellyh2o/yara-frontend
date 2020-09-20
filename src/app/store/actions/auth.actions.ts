@@ -7,11 +7,13 @@ export const requestRegistration = createAction(
 );
 
 export const requestRegistrationSuccess = createAction(
-  '[API Auth - Registration] Request Registration Success'
+  '[API Auth - Registration] Request Registration Success',
+  props<{ token: string }>()
 );
 
 export const requestRegistrationFailure = createAction(
-  '[API Auth - Registration] Request Registration Failure'
+  '[API Auth - Registration] Request Registration Failure',
+  props<{ error: any }>()
 );
 
 export const requestLogin = createAction(

@@ -9,7 +9,7 @@ describe('User Reducer', () => {
     const expected: UserState = {
       ...USER_INITIAL_MOCK_STATE,
       user: USER_INITIAL_MOCK_STATE.user,
-      loading: false,
+      loading: true,
     };
     const actual = userReducer(USER_INITIAL_MOCK_STATE, action);
 

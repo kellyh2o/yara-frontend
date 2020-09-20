@@ -19,7 +19,7 @@ describe('ReflectionsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should display a list of reflections', () => {
-    // expect(component.reflections$).toEqual(ENTRIES)
-  })
+  // it('should display a list of reflections', () => {
+  //   // expect(component.reflections$).toEqual(ENTRIES)
+  // })
 });
