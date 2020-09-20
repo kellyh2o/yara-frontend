@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 import { ReflectionResponse } from '../../services/reflection-response.model';
 import { Injectable } from '@angular/core';
 import { ApplicationState } from '../models/application-state.model';
-import { getToken } from '..';
+import { getToken } from '../selectors/auth.selectors';
 
 @Injectable({ providedIn: 'root'})
 export class ReflectionEffects {
