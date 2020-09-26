@@ -13,10 +13,10 @@ export const getRouterState = createSelector(
 
 export const getRouteParams = createSelector(
   getRouterState,
-  (state: RouterStateUrl) => state?.params // /heroes/1
+  (state: RouterStateUrl) => state?.params // /reflections/1
 );
 
 export const getRouteQueryParams = createSelector(
   getRouterState,
-  (state: RouterStateUrl) => state?.queryParams // /heroes?id=1
+  (state: RouterStateUrl) => state?.queryParams // /reflections?id=1
 );

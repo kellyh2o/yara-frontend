@@ -6,10 +6,17 @@ import {
     requestLoginSuccess
 } from '../actions/auth.actions';
 import { AuthService } from '../../services/auth.service';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { AuthResponse } from '../../services/user-response.model';
 import { Injectable } from '@angular/core';
+import { load$ } from '../../store/router-helpers';
+import { ReflectionsState } from '../models/reflections-state.model';
+import { loadReflections, go, loadReflectionFailure, loadReflectionSuccess, routeChange } from '../actions';
+import { getReflections, getToken } from '../selectors';
+import { ApplicationState } from '../models/application-state.model';
+import { ReflectionResponse } from 'src/app/services/reflection-response.model';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root'})
 export class AuthEffects {
@@ -25,8 +32,21 @@ export class AuthEffects {
         )
     );
 
+    // goPastLogin$ = createEffect(() => 
+    //     this.actions$.pipe(
+    //         ofType(requestLoginSuccess),
+    //         tap((action) => {
+    //             this.store$.dispatch(go({ path: ['/reflections']}))
+    //         })
+    //     ),
+    //     {dispatch: true}
+    // );
+    
+
     constructor(
         private actions$: Actions,
-        private authService: AuthService
+        private store$: Store<ApplicationState>,
+        private authService: AuthService,
+        private router: Router,
     ) {}
 }

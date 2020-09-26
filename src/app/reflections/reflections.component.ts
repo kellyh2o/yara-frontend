@@ -40,7 +40,7 @@ export class ReflectionsComponent implements OnInit {
   //     }
   //   });
 
-  //   // sorting heroes
+  //   // sorting reflections
   //   if (direction === '' || column === '') {
   //     this.journalEntries = ENTRIES;
   //   } else {
