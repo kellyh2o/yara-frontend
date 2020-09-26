@@ -13,7 +13,7 @@ export const cancelNewReflection = createAction(
     '[Reflections] Cancel New Reflection'
 );
 
-export const requestReflections = createAction(
+export const loadReflections = createAction(
     '[API Reflections] Request Reflections'
 );
 
@@ -43,7 +43,7 @@ const all = union({
     createNewReflection,
     saveNewReflection,
     cancelNewReflection,
-    requestReflections,
+    loadReflections,
     requestReflectionsSuccess,
     requestReflectionsFailure,
     requestCreateNewReflection,

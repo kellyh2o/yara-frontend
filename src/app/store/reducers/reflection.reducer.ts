@@ -3,7 +3,7 @@ import {
   createNewReflection, 
   saveNewReflection, 
   cancelNewReflection,
-  requestReflections,
+  loadReflections,
   requestReflectionsFailure,
   requestReflectionsSuccess
 } from '../actions/reflection.actions';
@@ -14,7 +14,7 @@ const reducer = createReducer(
   REFLECTION_INITIAL_STATE,
   on(createNewReflection, (state) => ({ ...state, showReflections: false })),
   on(cancelNewReflection, (state) => ({ ...state, showReflections: true })),
-  on(requestReflections, (state) => ({ ...state, loading: true})),
+  on(loadReflections, (state) => ({ ...state, loading: true})),
   on(requestReflectionsSuccess, (state, { reflections }) => ({
     ...state, 
     reflections,

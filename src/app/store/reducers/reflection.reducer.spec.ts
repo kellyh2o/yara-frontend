@@ -1,5 +1,5 @@
 import { ReflectionState } from '../models/reflection-state.model';
-import { createNewReflection, cancelNewReflection, saveNewReflection, requestReflections, requestReflectionsSuccess, requestReflectionsFailure } from '../actions/reflection.actions';
+import { createNewReflection, cancelNewReflection, saveNewReflection, loadReflections, requestReflectionsSuccess, requestReflectionsFailure } from '../actions/reflection.actions';
 import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 import { reflectionReducer } from './reflection.reducer';
 import { ReflectionType } from 'src/app/services/reflection-response.model';
@@ -35,8 +35,8 @@ describe('Reflection Reducer', () => {
 });
 
 describe ('Reflection Reducer', () => {
-    it('should set the loading key to true on `requestReflections`', () => {
-        const action = requestReflections();
+    it('should set the loading key to true on `loadReflections`', () => {
+        const action = loadReflections();
         const expected: ReflectionState = {
             ...REFLECTION_INITIAL_MOCK_STATE,
             loading: true

@@ -1,8 +1,8 @@
-import { Reflection } from 'src/app/models/reflection.model';
+import { Reflection } from '../../models/reflection.model';
 
 export interface ReflectionState {
-    readonly showReflections: boolean;
-    readonly reflections: Reflection[];
+    readonly reflection: Reflection;
     readonly loading: boolean;
+    readonly loaded: boolean;
   }
   

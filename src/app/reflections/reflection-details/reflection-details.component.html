@@ -1,0 +1,5 @@
+<ng-container *ngIf="reflection$ | async as reflection">
+    <h2>{{ reflection.title }}</h2>
+    <div>{{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}</div>
+    <div>{{ reflection.text }}</div>
+  </ng-container>
