@@ -2,36 +2,36 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { ApplicationState } from 'src/app/store/models/application-state.model';
-import { HERO_INITIAL_MOCK_STATE as initialState } from '../store/hero-initial-mock-state';
-import { HeroDetailsComponent } from './hero-details.component';
-import { getSelectedHero } from '../store';
+import { REFLECTION_INITIAL_MOCK_STATE as initialState } from '../../store/state/reflection-initial-mock-state';
+import { ReflectionDetailsComponent } from './reflection-details.component';
+import { getSelectedReflection } from '../../store';
 import { of } from 'rxjs';
 
-describe('HeroDetailsComponent', () => {
-  let component: HeroDetailsComponent;
-  let fixture: ComponentFixture<HeroDetailsComponent>;
+describe('ReflectionDetailsComponent', () => {
+  let component: ReflectionDetailsComponent;
+  let fixture: ComponentFixture<ReflectionDetailsComponent>;
   let store: MockStore<ApplicationState>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroDetailsComponent],
+      declarations: [ReflectionDetailsComponent],
       providers: [provideMockStore({ initialState })],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroDetailsComponent);
+    fixture = TestBed.createComponent(ReflectionDetailsComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
     fixture.detectChanges();
   });
 
-  it('should display a selected hero', (done) => {
-    spyOn(store, 'select').and.returnValue(of(initialState.hero));
+  it('should display a selected reflection', (done) => {
+    spyOn(store, 'select').and.returnValue(of(initialState.reflection));
     component.ngOnInit();
-    expect(store.select).toHaveBeenCalledWith(getSelectedHero);
-    component.hero$.subscribe((hero) => {
-      expect(hero).toEqual(initialState.hero);
+    expect(store.select).toHaveBeenCalledWith(getSelectedReflection);
+    component.reflection$.subscribe((reflection) => {
+      expect(reflection).toEqual(initialState.reflection);
       done();
     });
   });

@@ -26,4 +26,13 @@ describe('NavComponent', () => {
   it('should have a title', () => {
     expect(component.title).toBe('Y A R A');
   });
+
+  it('should display an array of links', () => {
+    const links = [
+      { title: 'Reflections', fragment: '/reflections' },
+      { title: 'Login', fragment: '/login' },
+    ];
+
+    expect(component.links).toEqual(links);
+  });
 });

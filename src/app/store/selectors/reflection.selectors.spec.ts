@@ -1,4 +1,4 @@
-import { getReflections, getReflectionsLoaded, getSelectedReflection, getShowReflections, getShowNewReflectionForm } from './reflection.selectors';
+import { getReflections, getReflectionsLoaded, getSelectedReflection, getShowReflections, getShowNewReflectionForm, getSelectedReflectionId } from './reflection.selectors';
 import { REFLECTIONS_INITIAL_MOCK_STATE } from '../state/reflections-initial-mock-state';
 import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 
@@ -23,5 +23,9 @@ describe('Reflection selectors', () => {
 
     it('should retrieve selectedReflection from ReflectionState', () => {
         expect(getSelectedReflection.projector(reflectionState)).toBe(reflectionState.reflection);
+    });
+
+    it('should retrieve selectedReflectionId from ReflectionState', () => {
+        expect(getSelectedReflectionId.projector(reflectionState)).toBe(reflectionState.reflection._id);
     });
 });

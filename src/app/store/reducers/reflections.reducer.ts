@@ -12,7 +12,7 @@ import { ReflectionsState } from '../models/reflections-state.model';
 
 const reducer = createReducer(
     REFLECTIONS_INITIAL_STATE,
-    on(loadReflections, (state) => ({ ...state, loading: true})),
+    on(loadReflections, (state) => ({ ...state, loading: true, loaded: false})),
     on(loadReflectionsSuccess, (state, { reflections }) => ({
         ...state,
         reflections,
