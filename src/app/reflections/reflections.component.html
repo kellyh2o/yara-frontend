@@ -5,9 +5,9 @@
             <tr *ngFor="let reflection of reflections$ | async">
                 <td>
                     <div>
-                        <p class="reflection-title">
+                        <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
                             {{ reflection.title }}
-                        </p>
+                        </a>
                         <p class="reflection-date">
                             {{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}
                         </p>

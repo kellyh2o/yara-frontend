@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ReflectionsComponent } from './reflections.component';
-
-import { SortableHeaderModule } from './components/directives/sortable-header.module';
 import { ReflectionDetailsComponent } from './reflection-details/reflection-details.component';
 
-const components = [ReflectionsComponent];
+import { SortableHeaderModule } from './components/directives/sortable-header.module';
+import { RouterModule } from '@angular/router';
+
+
+const components = [ReflectionsComponent, ReflectionDetailsComponent];
 
 @NgModule({
-  declarations: [...components, ReflectionDetailsComponent],
-  imports: [CommonModule, SortableHeaderModule],
+  declarations: [...components],
+  imports: [CommonModule, RouterModule, SortableHeaderModule],
   exports: [...components],
 })
 export class ReflectionsModule {}

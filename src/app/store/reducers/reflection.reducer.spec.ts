@@ -53,7 +53,7 @@ describe ('Reflection Reducer', () => {
     it('should set the reflections key to the reflections returned by the API on `loadReflectionsSuccess`', () => {
         const reflections = [
             {
-                id: Guid.create(),
+                _id: Guid.create(),
                 title: "Test",
                 text: "test text",
                 type: ReflectionType.Open,
