@@ -1,28 +1,21 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { 
-  createNewReflection, 
-  saveNewReflection, 
-  cancelNewReflection,
-  loadReflections,
-  requestReflectionsFailure,
-  requestReflectionsSuccess
-} from '../actions/reflection.actions';
-import { ReflectionState } from '../models/reflection-state.model';
+import { loadReflection, loadReflectionFailure, loadReflectionSuccess } from '../actions';
 import { REFLECTION_INITIAL_STATE } from '../state/reflection-initial-state';
+import { ReflectionState } from '../models/reflection-state.model';
 
 const reducer = createReducer(
   REFLECTION_INITIAL_STATE,
-  on(createNewReflection, (state) => ({ ...state, showReflections: false })),
-  on(cancelNewReflection, (state) => ({ ...state, showReflections: true })),
-  on(loadReflections, (state) => ({ ...state, loading: true})),
-  on(requestReflectionsSuccess, (state, { reflections }) => ({
-    ...state, 
-    reflections,
-    loading: false
+  on(loadReflection, (state) => ({ ...state, loading: true })),
+  on(loadReflectionSuccess, (state, { reflection }) => ({
+    ...state,
+    reflection,
+    loading: false,
+    loaded: true,
   })),
-  on(requestReflectionsFailure, (state) => ({
+  on(loadReflectionFailure, (state) => ({
     ...state,
     loading: false,
+    loaded: false,
   }))
 );
 

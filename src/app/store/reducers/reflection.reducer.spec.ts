@@ -1,5 +1,5 @@
 import { ReflectionState } from '../models/reflection-state.model';
-import { createNewReflection, cancelNewReflection, saveNewReflection, loadReflections, requestReflectionsSuccess, requestReflectionsFailure } from '../actions/reflection.actions';
+import { addReflection, cancelNewReflection, saveNewReflection, loadReflections, loadReflectionsSuccess, loadReflectionsFailure } from '../actions/reflection.actions';
 import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 import { reflectionReducer } from './reflection.reducer';
 import { ReflectionType } from 'src/app/services/reflection-response.model';
@@ -7,8 +7,8 @@ import { Guid } from 'guid-typescript';
 import { Reflection } from 'src/app/models/reflection.model';
 
 describe('Reflection Reducer', () => {
-    it('should set the showReflections key to false on `createNewReflection`', () => {
-        const action = createNewReflection();
+    it('should set the showReflections key to false on `addReflection`', () => {
+        const action = addReflection();
         const expected: ReflectionState = {
             ...REFLECTION_INITIAL_MOCK_STATE,
             showReflections: false,
@@ -50,7 +50,7 @@ describe ('Reflection Reducer', () => {
 
 
 describe ('Reflection Reducer', () => {
-    it('should set the reflections key to the reflections returned by the API on `requestReflectionsSuccess`', () => {
+    it('should set the reflections key to the reflections returned by the API on `loadReflectionsSuccess`', () => {
         const reflections = [
             {
                 id: Guid.create(),
@@ -61,7 +61,7 @@ describe ('Reflection Reducer', () => {
             },
         ] as Reflection[];
 
-        const action = requestReflectionsSuccess({
+        const action = loadReflectionsSuccess({
             reflections: reflections
         });
 
@@ -77,8 +77,8 @@ describe ('Reflection Reducer', () => {
 });
 
 describe ('Reflection Reducer', () => {
-    it('should set the loading key to false on `requestReflectionsFailure`', () => {
-        const action = requestReflectionsFailure({ error: "Failure"});
+    it('should set the loading key to false on `loadReflectionsFailure`', () => {
+        const action = loadReflectionsFailure({ error: "Failure"});
         const expected: ReflectionState = {
             ...REFLECTION_INITIAL_MOCK_STATE,
             loading: false

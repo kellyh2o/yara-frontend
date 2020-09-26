@@ -24,8 +24,8 @@ export class ReflectionService {
     });
   }
 
-  getReflection(token: string, reflectionId: Guid): Observable<ReflectionResponse[]> {
-    return this.http.get<ReflectionResponse[]>(`${REFLECTIONS_URL}/${reflectionId}`, {
+  getReflection(token: string, reflectionId: Guid): Observable<ReflectionResponse> {
+    return this.http.get<ReflectionResponse>(`${REFLECTIONS_URL}/${reflectionId}`, {
       headers: header(token)
     });
   }
