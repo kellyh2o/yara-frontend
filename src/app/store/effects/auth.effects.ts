@@ -32,15 +32,15 @@ export class AuthEffects {
         )
     );
 
-    // goPastLogin$ = createEffect(() => 
-    //     this.actions$.pipe(
-    //         ofType(requestLoginSuccess),
-    //         tap((action) => {
-    //             this.store$.dispatch(go({ path: ['/reflections']}))
-    //         })
-    //     ),
-    //     {dispatch: true}
-    // );
+    goPastLogin$ = createEffect(() => 
+        this.actions$.pipe(
+            ofType(requestLoginSuccess),
+            tap((action) => {
+                this.store$.dispatch(go({ path: ['reflections']}))
+            })
+        ),
+        {dispatch: false}
+    );
     
 
     constructor(

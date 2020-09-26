@@ -36,7 +36,6 @@ interface NavLinks {
 export class NavComponent implements OnInit {
   title = 'Y A R A';
   links: NavLinks[] = [
-    { title: 'Dashboard', fragment: '/' },
     { title: 'Reflections', fragment: '/reflections' },
     { title: 'Login', fragment: '/login' },
   ];
