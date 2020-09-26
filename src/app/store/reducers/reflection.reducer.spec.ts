@@ -68,7 +68,7 @@ describe('Reflection Reducer', () => {
         const expected: ReflectionState = {
             ...REFLECTION_INITIAL_MOCK_STATE,
             loading: false,
-            loaded: true,
+            loaded: false,
         };
 
         const actual = reflectionReducer(REFLECTION_INITIAL_MOCK_STATE, action);
@@ -76,12 +76,12 @@ describe('Reflection Reducer', () => {
         expect (actual).toEqual(expected);
     });
 
-    it('should set the loaded key to true on `loadReflectionsFailure`', () => {
+    it('should set the loaded key to false on `loadReflectionsFailure`', () => {
         const action = loadReflectionsFailure({ error: 'error'});
         const expected: ReflectionState = {
             ...REFLECTION_INITIAL_MOCK_STATE,
             loading: false,
-            loaded: true,
+            loaded: false,
         };
 
         const actual = reflectionReducer(REFLECTION_INITIAL_MOCK_STATE, action);

@@ -7,18 +7,21 @@ import { NavComponent } from './nav.component';
 describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
-  let mockStore: MockStore;
-
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [provideMockStore()],
       declarations: [NavComponent],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { children: [{ url: [''] }] }, data: {} },
+        },
+      ],
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NavComponent);
-    mockStore = TestBed.inject(MockStore);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -36,7 +36,7 @@ describe('CreateReflectionComponent', () => {
   it('should dispatch cancelNewReflection on cancel', () => {
     const dispatchSpy = spyOn(store, 'dispatch');
     const action = cancelNewReflection();
-    component.submit();
+    component.cancel();
     expect(dispatchSpy).toHaveBeenCalledWith(action);
   });
 });
