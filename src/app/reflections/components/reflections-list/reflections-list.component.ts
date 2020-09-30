@@ -1,32 +1,28 @@
 import { Component, OnInit, ViewChildren, QueryList, Input } from '@angular/core';
-import { Reflection } from '../models/reflection.model';
+import { Reflection } from '../../../models/reflection.model';
 import {
   SortableHeaderDirective,
   SortEvent,
   SortDirection,
   compare
-} from './components/directives/sortable-header.directive';
+} from '../directives/sortable-header.directive';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-reflections',
-  templateUrl: './reflections.component.html',
-  styleUrls: ['./reflections.component.scss']
+  selector: 'app-reflection-list',
+  templateUrl: './reflections-list.component.html',
+  styleUrls: ['./reflections-list.component.scss']
 })
-export class ReflectionsComponent implements OnInit {
-
-  reflections$: Observable<Reflection[]>;
+export class ReflectionsListComponent implements OnInit {
+    @Input() reflections: Reflection[];
 
   // @ViewChildren(SortableHeaderDirective) headers: QueryList<
   //   SortableHeaderDirective
   // >;
 
-  constructor(private reflectionsFacade: ReflectionsFacade) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.reflections$ = this.reflectionsFacade.reflections$;
-    this.reflectionsFacade.loadReflections();
-  }
+  ngOnInit(): void {}
 
   onSort({ column, direction }: SortEvent) {
   //   // resetting other headers

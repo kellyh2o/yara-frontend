@@ -4,7 +4,7 @@ import { REFLECTION_INITIAL_MOCK_STATE } from './reflection-initial-mock-state';
 import { REFLECTIONS_INITIAL_MOCK_STATE } from './reflections-initial-mock-state';
 import { USER_INITIAL_MOCK_STATE } from './user-initial-mock-state';
 
-export const APP_INTIAL_MOCK_STATE: ApplicationState = {
+export const APP_INITIAL_MOCK_STATE: ApplicationState = {
   router: null,
   authState: AUTH_INITIAL_MOCK_STATE,
   userState: USER_INITIAL_MOCK_STATE,

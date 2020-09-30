@@ -19,10 +19,9 @@ export const initialState: AuthState = {
 const reducer = createReducer(
   initialState,
   on(requestRegistration, (state) => ({ ...state, loading: true })),
-  on(requestRegistrationSuccess, (state, { token }) => ({
+  on(requestRegistrationSuccess, (state) => ({
     ...state,
     isAuth: true,
-    token, 
     loading: false
   })),
   on(requestRegistrationFailure, (state) => ({
@@ -31,10 +30,9 @@ const reducer = createReducer(
     loading: false,
   })),
   on(requestLogin, (state) => ({ ...state, loading: true })),
-  on(requestLoginSuccess, (state, { token }) => ({
+  on(requestLoginSuccess, (state) => ({
     ...state,
     isAuth: true,
-    token,
     loading: false,
   })),
   on(requestLoginFailure, (state) => ({

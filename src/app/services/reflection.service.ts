@@ -18,21 +18,16 @@ const header = (token: string) => ({
 export class ReflectionService {
   constructor(private http: HttpClient) { }
 
-  getReflections(token: string): Observable<ReflectionResponse[]> {
-    return this.http.get<ReflectionResponse[]>(REFLECTIONS_URL, {
-      headers: header(token)
-    });
+  getReflections(): Observable<ReflectionResponse[]> {
+    return this.http.get<ReflectionResponse[]>(REFLECTIONS_URL);
   }
 
-  getReflection(token: string, reflectionId: Guid): Observable<ReflectionResponse> {
-    return this.http.get<ReflectionResponse>(`${REFLECTIONS_URL}/${reflectionId}`, {
-      headers: header(token)
-    });
+  getReflection(reflectionId: Guid): Observable<ReflectionResponse> {
+    return this.http.get<ReflectionResponse>(`${REFLECTIONS_URL}/${reflectionId}`);
   }
 
-  createReflection(token: string, title: string, text: string, type: ReflectionType): Observable<ReflectionResponse> {
+  createReflection(title: string, text: string, type: ReflectionType): Observable<ReflectionResponse> {
     return this.http.post<ReflectionResponse>(REFLECTIONS_URL, {
-      headers: header(token),
       title,
       text,
       type

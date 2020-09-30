@@ -21,7 +21,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
@@ -35,7 +34,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
@@ -49,7 +47,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
@@ -99,7 +96,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
@@ -113,7 +109,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
@@ -127,7 +122,6 @@ describe('Auth Reducer', () => {
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: true,
-      token: testToken,
       loading: false
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);

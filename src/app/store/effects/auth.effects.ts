@@ -32,20 +32,34 @@ export class AuthEffects {
         )
     );
 
-    goPastLogin$ = createEffect(() => 
+    // side effect
+    loginSuccess$ = createEffect(
+      () =>
         this.actions$.pipe(
-            ofType(requestLoginSuccess),
-            tap((action) => {
-                this.store$.dispatch(go({ path: ['reflections']}))
-            })
+          ofType(requestLoginSuccess),
+          tap(({ token }) => {
+            localStorage.setItem('token', token);
+            this.router.navigateByUrl('/');
+          })
         ),
-        {dispatch: false}
+      { dispatch: false }
     );
+
+    // TODO:
+    // goPastLogin$ = createEffect(() => 
+    //     this.actions$.pipe(
+    //         ofType(requestLoginSuccess),
+    //         tap((action) => {
+    //             this.store$.dispatch(go({ path: ['reflections']}))
+    //         })
+    //     ),
+    //     {dispatch: false}
+    // );
     
 
     constructor(
         private actions$: Actions,
-        private store$: Store<ApplicationState>,
+        //private store$: Store<ApplicationState>,
         private authService: AuthService,
         private router: Router,
     ) {}
