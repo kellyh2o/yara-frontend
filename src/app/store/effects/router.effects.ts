@@ -9,7 +9,6 @@ import { NavigationGo } from '../models/router.models';
 
 import { go, back, forward, routeChange } from '../actions/router.actions';
 import { tap, filter } from 'rxjs/operators';
-import { requestLoginSuccess } from '../actions';
 
 @Injectable()
 export class RouterEffects {

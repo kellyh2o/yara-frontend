@@ -13,7 +13,7 @@ describe('ReflectionsFacade', () => {
     it('should load reflections', () => {
       const dispatchSpy = spyOn(MOCK_STORE$, 'dispatch');
       const action = loadReflections();
-      reflectionsFacade.loadHeroes();
+      reflectionsFacade.loadReflections();
       expect(dispatchSpy).toHaveBeenCalledWith(action);
     });
   });
