@@ -11,8 +11,3 @@ export const getShowLogin = createSelector(
   authState,
   ({ isAuth }: AuthState) => !isAuth
 );
-
-export const getToken = createSelector(
-  authState,
-  ({ token }: AuthState) => token
-);

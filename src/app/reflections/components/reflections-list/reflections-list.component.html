@@ -1,8 +1,8 @@
 
 <div class="container-width-full">
-    <table class="table">
+    <table class="table" *ngIf="reflections; else loadingReflections">
         <tbody>
-            <tr *ngFor="let reflection of reflections$ | async">
+            <tr *ngFor="let reflection of reflections">
                 <td>
                     <div>
                         <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
@@ -20,4 +20,8 @@
             </tr>
         </tbody>
     </table>
+
+    <ng-template #loadingReflections>
+        <div>Loading reflections...</div>
+    </ng-template>
 </div>

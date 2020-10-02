@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-reflection-list',
+  selector: 'app-reflections-list',
   templateUrl: './reflections-list.component.html',
   styleUrls: ['./reflections-list.component.scss']
 })
