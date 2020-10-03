@@ -5,7 +5,7 @@
             <tr *ngFor="let reflection of reflections">
                 <td>
                     <div>
-                        <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
+                        <a [routerLink]="['reflections', reflection._id]" class="reflection-title">
                             {{ reflection.title }}
                         </a>
                         <p class="reflection-date">

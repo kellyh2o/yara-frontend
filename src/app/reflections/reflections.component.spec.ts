@@ -1,47 +1,38 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { REFLECTIONS_INITIAL_MOCK_STATE as initialState } from '../store/state/reflections-initial-mock-state';
+import { MOCK_REFLECTION } from '../store/state/reflection-initial-mock-state';
 
 import { ReflectionsComponent } from './reflections.component';
-import { ApplicationState } from '../store/models/application-state.model';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { ReflectionsFacade } from './reflections.facade';
 
-import { REFLECTIONS_INITIAL_MOCK_STATE as initialState } from '../store/state/reflections-initial-mock-state';
-import { of } from 'rxjs';
-import { getReflections, loadReflections } from '../store';
+const MockReflectionsFacade = {
+  reflections$: of([MOCK_REFLECTION]),
+  loadReflections: () => null,
+};
 
 describe('ReflectionsComponent', () => {
   let component: ReflectionsComponent;
   let fixture: ComponentFixture<ReflectionsComponent>;
-  let store: MockStore<ApplicationState>;
-
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ReflectionsComponent],
-      providers: [provideMockStore({ initialState })],
+      providers: [{ provide: ReflectionsFacade, useValue: MockReflectionsFacade }],
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ReflectionsComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject(MockStore);
     fixture.detectChanges();
   });
 
   it('should display reflections', (done) => {
-    spyOn(store, 'select').and.returnValue(of(initialState.reflections));
     component.ngOnInit();
-    expect(store.select).toHaveBeenCalledWith(getReflections);
     component.reflections$.subscribe((reflections) => {
       expect(reflections).toEqual(initialState.reflections);
       done();
     });
-  });
-
-  it('should load reflections', () => {
-    const dispatchSpy = spyOn(store, 'dispatch');
-    const action = loadReflections();
-    component.ngOnInit();
-    expect(dispatchSpy).toHaveBeenCalledWith(action);
   });
 });

@@ -7,6 +7,7 @@ import {
   compare
 } from '../directives/sortable-header.directive';
 import { Observable } from 'rxjs';
+import { ReflectionsFacade } from '../../reflections.facade';
 
 @Component({
   selector: 'app-reflections-list',
