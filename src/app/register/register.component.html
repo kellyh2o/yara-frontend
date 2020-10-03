@@ -1,7 +1,16 @@
 
-<form class="login-form" [formGroup]="loginForm" autocomplete="off">
+<form class="register-form" [formGroup]="registerForm" autocomplete="off">
     <h2 class="app-title">Y A R A</h2>
     <br />
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        class="form-control"
+        type="text"
+        formControlName="email"
+      />
+    </div>
     <div class="form-group">
       <label for="username">Username</label>
       <input
@@ -21,14 +30,14 @@
       />
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-outline-success login-button" (click)="submit()">
-        Login
+      <button type="submit" class="btn btn-outline-success register-button" (click)="submit()">
+        Register
       </button>
     </div>
     <div>
-      Need to create an account? 
-      <a [routerLink]="['/register']">
-        Register here
+      Already have an account? 
+      <a [routerLink]="['/login']">
+        Login here
       </a>
     </div>
   </form>

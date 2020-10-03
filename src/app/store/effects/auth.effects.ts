@@ -4,6 +4,9 @@ import {
   requestLogin,
   requestLoginFailure,
   requestLoginSuccess,
+  requestRegistration,
+  requestRegistrationSuccess,
+  requestRegistrationFailure,
 } from '../actions/auth.actions';
 import { AuthService } from '../../services/auth.service';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
@@ -25,11 +28,36 @@ export class AuthEffects {
     )
   );
 
+  register$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(requestRegistration),
+      switchMap(({ email, username, password }) =>
+        this.authService.register(email, username, password).pipe(
+          map(({ token }: AuthResponse) => requestRegistrationSuccess({ token })),
+          catchError((error) => of(requestRegistrationFailure({ error })))
+        )
+      )
+    )
+  );
+
   // side effect
   loginSuccess$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(requestLoginSuccess),
+        tap(({ token }) => {
+          localStorage.setItem('token', token);
+          this.router.navigateByUrl('/');
+        })
+      ),
+    { dispatch: false }
+  );
+
+  // side effect
+  registrationSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(requestRegistrationSuccess),
         tap(({ token }) => {
           localStorage.setItem('token', token);
           this.router.navigateByUrl('/');
