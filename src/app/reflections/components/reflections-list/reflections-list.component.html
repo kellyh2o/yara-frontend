@@ -8,9 +8,6 @@
                         <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
                             {{ reflection.title }}
                         </a>
-                        <!-- <a routerLink="/reflections/{{reflection._id}}" class="reflection-title">
-                            {{ reflection.title }}
-                        </a> -->
                         <p class="reflection-date">
                             {{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}
                         </p>

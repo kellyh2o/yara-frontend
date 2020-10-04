@@ -3,6 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { ApplicationState } from '../store/models/application-state.model';
 import { getShowReflections, getShowNewReflectionForm } from '../store';
 import { Observable } from 'rxjs';
+import { Reflection } from '../models/reflection.model';
+import { ReflectionsFacade } from '../reflections/reflections.facade';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +13,18 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
+  reflections$: Observable<Reflection[]>;
   showReflections$: Observable<boolean>;
   showNewReflectionForm$: Observable<boolean>;
 
-  constructor(private store$: Store<ApplicationState>) {}
+  constructor(private reflectionsFacade: ReflectionsFacade) {}
 
   ngOnInit(): void {
-    this.showReflections$ = this.store$.pipe(select(getShowReflections));
-    this.showNewReflectionForm$ = this.store$.pipe(select(getShowNewReflectionForm));
+
+    this.reflections$ = this.reflectionsFacade.reflections$;
+    this.showReflections$ = this.reflectionsFacade.showReflections$;
+    this.showNewReflectionForm$ = this.reflectionsFacade.showNewReflectionForm;
+
+    this.reflectionsFacade.loadReflections();
   }
 }
