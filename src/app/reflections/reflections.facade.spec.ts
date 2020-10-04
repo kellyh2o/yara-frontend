@@ -1,6 +1,6 @@
 import { ReflectionsFacade } from './reflections.facade';
 import { MOCK_STORE$ } from '../store/testing';
-import { loadReflections, loadReflection } from '../store';
+import { loadReflections, loadReflection, createNewReflection } from '../store';
 import { Guid } from 'guid-typescript';
 
 describe('ReflectionsFacade', () => {
@@ -26,6 +26,18 @@ describe('ReflectionsFacade', () => {
       const dispatchSpy = spyOn(MOCK_STORE$, 'dispatch');
       const action = loadReflection({ reflectionId: testGuid });
       reflectionsFacade.loadReflection(testGuid);
+      expect(dispatchSpy).toHaveBeenCalledWith(action);
+    });
+  });
+
+  describe('#createReflection method', () => {
+    it('should create a reflection', () => {
+      const title = 'ReflectionTitle';
+      const text = 'ReflectionText';
+
+      const dispatchSpy = spyOn(MOCK_STORE$, 'dispatch');
+      const action = createNewReflection({ title: title, text: text });
+      reflectionsFacade.createReflection(title, text);
       expect(dispatchSpy).toHaveBeenCalledWith(action);
     });
   });

@@ -11,6 +11,9 @@ import {
   loadReflectionsSuccess,
   loadReflectionFailure,
   loadReflectionSuccess,
+  createNewReflection,
+  createNewReflectionSuccess,
+  createNewReflectionFailure,
 } from '../actions';
 import { MOCK_REFLECTION } from '../state/reflection-initial-mock-state';
 import { ReflectionEffects } from './reflection.effects';
@@ -20,7 +23,7 @@ import { Observable, of } from 'rxjs';
 const mockReflectionsService = {
   getReflections: () => of([MOCK_REFLECTION]),
   getReflection: () => of(MOCK_REFLECTION),
-  // createReflection: () => {}
+  createReflection: (title, text, type) => {}
 };
 
 const mockReflectionsResponse: ReflectionResponse[] = [MOCK_REFLECTION];
@@ -103,6 +106,38 @@ describe('ReflectionsEffects', () => {
       });
 
       expect(effects.loadReflection$).toBeObservable(expected$);
+    });
+  });
+
+  describe('createReflection$', () => {
+    it('should successfully create a reflection', () => {
+      spyOn(reflectionsService, 'createReflection').and.returnValue(
+        of(mockReflectionsResponse[0])
+      );
+      actions$ = hot('a', {
+        a: createNewReflection({ title: 'testTitle', text: 'testText' }),
+      });
+
+      const expected$ = cold('b', {
+        b: createNewReflectionSuccess(),
+      });
+      expect(effects.createReflection$).toBeObservable(expected$);
+    });
+
+    it('should fail to create a reflection', () => {
+      const errMsg = 'I tried...';
+      const error$ = cold('#', {}, errMsg);
+
+      spyOn(reflectionsService, 'createReflection').and.returnValue(error$);
+      actions$ = hot('a', {
+        a: createNewReflection({ title: 'testTitle', text: 'testText' }),
+      });
+
+      const expected$ = cold('b', {
+        b: createNewReflectionFailure({ error: errMsg }),
+      });
+
+      expect(effects.createReflection$).toBeObservable(expected$);
     });
   });
 });

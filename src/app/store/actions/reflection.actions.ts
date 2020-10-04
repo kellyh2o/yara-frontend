@@ -47,14 +47,17 @@ export const loadReflectionFailure = createAction(
 
 
 export const createNewReflection = createAction(
-    '[API Reflections] Create Reflection');
+    '[API Reflections] Create Reflection',
+    props<{ title: string, text: string }>()
+);
 
 export const createNewReflectionSuccess = createAction(
     '[API Reflections] Create Reflection Success'
 );
 
 export const createNewReflectionFailure = createAction(
-    '[API Reflections] Create Reflection Failure'
+    '[API Reflections] Create Reflection Failure',
+    props<{ error: any}>()
 );
 
 

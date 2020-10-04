@@ -6,12 +6,15 @@ import {
     loadReflectionFailure,
     loadReflections,
     loadReflectionsSuccess,
-    loadReflectionsFailure
+    loadReflectionsFailure,
+    createNewReflection,
+    createNewReflectionSuccess,
+    createNewReflectionFailure
 } from '../actions/reflection.actions';
 import { ReflectionService } from '../../services/reflection.service';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ReflectionResponse } from '../../services/reflection-response.model';
+import { ReflectionResponse, ReflectionType } from '../../services/reflection-response.model';
 import { Injectable } from '@angular/core';
 import { ApplicationState } from '../models/application-state.model';
 import { ReflectionState } from '../models/reflection-state.model';
@@ -47,11 +50,23 @@ export class ReflectionEffects {
     )
   );
 
+  createReflection$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType(createNewReflection),
+      switchMap(( { title, text }) =>
+        this.reflectionService.createReflection(title, text, ReflectionType.Open).pipe(
+          map(() => createNewReflectionSuccess()),
+          catchError((error) => of(createNewReflectionFailure({ error })))
+        )
+      )
+    )
+  );
+
   checkReflectionRoute$ = createEffect(() =>
     this.actions$.pipe(
       ofType(routeChange),
       withLatestFrom(this.store.select(selectedReflectionState)),
-      load$<ReflectionState>(loadReflection, 'reflections/:reflectionId')
+      load$<ReflectionState>(loadReflection, ':reflectionId')
     )
   );
 

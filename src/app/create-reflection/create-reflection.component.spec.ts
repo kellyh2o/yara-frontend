@@ -26,17 +26,5 @@ describe('CreateReflectionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should dispatch saveNewReflection on submit', () => {
-    const dispatchSpy = spyOn(store, 'dispatch');
-    const action = saveNewReflection();
-    component.submit();
-    expect(dispatchSpy).toHaveBeenCalledWith(action);
-  });
-
-  it('should dispatch cancelNewReflection on cancel', () => {
-    const dispatchSpy = spyOn(store, 'dispatch');
-    const action = cancelNewReflection();
-    component.cancel();
-    expect(dispatchSpy).toHaveBeenCalledWith(action);
-  });
+  // todo: test this?
 });

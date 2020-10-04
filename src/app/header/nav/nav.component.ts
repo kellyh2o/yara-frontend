@@ -37,6 +37,7 @@ export class NavComponent implements OnInit {
   title = 'Y A R A';
   links: NavLinks[] = [
     { title: 'Reflections', fragment: '/reflections' },
+    { title: 'Create Reflection', fragment: '/reflections/create' },
     { title: 'Login', fragment: '/login' },
   ];
 

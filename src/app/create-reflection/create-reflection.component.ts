@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { ApplicationState } from '../store/models/application-state.model';
-import { saveNewReflection, cancelNewReflection } from '../store';
+import { ReflectionsFacade } from '../reflections/reflections.facade';
 
 @Component({
   selector: 'app-create-reflection',
@@ -13,21 +11,24 @@ export class CreateReflectionComponent implements OnInit {
 
   newReflectionForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private store$: Store<ApplicationState>) {
-    this.newReflectionForm = this.fb.group({
-      reflection: ''
-    })
-   }
+  constructor(
+    private fb: FormBuilder,
+    private reflectionsFacade: ReflectionsFacade
+    ) {}
 
-  ngOnInit(): void {
-  }
-
-  submit() {
-    this.store$.dispatch(saveNewReflection());
-  }
+    ngOnInit() : void {
+      this.newReflectionForm = this.fb.group({
+        title: '',
+        text: '',
+      });
+    }
+  
+    submit() : void {
+      const { title, text } = this.newReflectionForm.value;
+      this.reflectionsFacade.createReflection(title, text);
+    }
 
   cancel() {
-    this.store$.dispatch(cancelNewReflection());
+    //this.store$.dispatch(cancelNewReflection());
   }
-
 }
