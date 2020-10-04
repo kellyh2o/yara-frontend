@@ -5,7 +5,7 @@ import { AbstractFormGroupDirective } from '@angular/forms';
 import { Reflection } from 'src/app/models/reflection.model';
 
 export const MOCK_REFLECTION: Reflection = {
-    _id: Guid.createEmpty(),
+    _id: Guid.createEmpty().toString(),
     title: 'Morning Reflection',
     text: 'Beautiful sunrise this morning.',
     type: ReflectionType.Open,

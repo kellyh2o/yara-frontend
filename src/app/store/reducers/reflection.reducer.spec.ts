@@ -2,10 +2,7 @@ import { ReflectionState } from '../models/reflection-state.model';
 import { addReflection, cancelNewReflection, saveNewReflection, loadReflections, loadReflectionsSuccess, loadReflectionsFailure, loadReflection, loadReflectionSuccess } from '../actions/reflection.actions';
 import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 import { reflectionReducer } from './reflection.reducer';
-import { ReflectionType } from 'src/app/services/reflection-response.model';
-import { Guid } from 'guid-typescript';
-import { Reflection } from 'src/app/models/reflection.model';
-import { REFLECTION_INITIAL_STATE } from '../state/reflection-initial-state';
+
 
 describe('Reflection Reducer', () => {
     it('should start loading reflections on `loadReflection`', () => {

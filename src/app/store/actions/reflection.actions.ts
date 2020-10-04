@@ -1,6 +1,5 @@
 import { createAction, props, union } from '@ngrx/store';
 import { Reflection } from 'src/app/models/reflection.model';
-import { Guid } from 'guid-typescript';
 
 // Click Events
 export const addReflection = createAction(
@@ -33,7 +32,7 @@ export const loadReflectionsFailure = createAction(
 
 export const loadReflection = createAction(
     '[API Reflections] Load Reflection',
-    props<{ reflectionId: Guid}>()
+    props<{ reflectionId: string}>()
 );
 
 export const loadReflectionSuccess = createAction(

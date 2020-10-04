@@ -5,7 +5,6 @@ import { ApplicationState } from '../store/models/application-state.model';
 import { Reflection } from '../models/reflection.model';
 
 import { loadReflections, getReflections, getSelectedReflection, loadReflection, getShowReflections, getShowNewReflectionForm } from '../store';
-import { Guid } from 'guid-typescript';
 
 @Injectable({ providedIn: 'root' })
 export class ReflectionsFacade {
@@ -22,7 +21,7 @@ export class ReflectionsFacade {
     this.store.dispatch(loadReflections());
   }
 
-  loadReflection(reflectionId: Guid): void {
+  loadReflection(reflectionId: string): void {
     this.store.dispatch(loadReflection({ reflectionId }));
   }
 }

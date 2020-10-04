@@ -1,7 +1,5 @@
-import { Guid } from 'guid-typescript';
-
 export interface ReflectionResponse {
-    _id: Guid; 
+    _id: string; 
     title: string;
     text: string;
     type: ReflectionType;

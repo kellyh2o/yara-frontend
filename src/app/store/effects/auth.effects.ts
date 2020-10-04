@@ -32,7 +32,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(requestRegistration),
       switchMap(({ email, username, password }) =>
-        this.authService.register(email, username, password).pipe(
+        this.authService.register(username, password, email).pipe(
           map(({ token }: AuthResponse) => requestRegistrationSuccess({ token })),
           catchError((error) => of(requestRegistrationFailure({ error })))
         )

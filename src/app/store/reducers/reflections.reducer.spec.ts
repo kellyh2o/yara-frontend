@@ -37,7 +37,7 @@ describe('Reflections Reducer', () => {
     it('should set the reflections key to the reflections returned by the API on `loadReflectionsSuccess`', () => {
         const reflections = [
             {
-                _id: Guid.create(),
+                _id: Guid.create().toString(),
                 title: "Test",
                 text: "test text",
                 type: ReflectionType.Open,
@@ -64,7 +64,7 @@ describe('Reflections Reducer', () => {
     it('should set the loading key to false on `loadReflectionsSuccess`', () => {
         const reflections = [
             {
-                _id: Guid.create(),
+                _id: Guid.create().toString(),
                 title: "Test",
                 text: "test text",
                 type: ReflectionType.Open,
@@ -91,7 +91,7 @@ describe('Reflections Reducer', () => {
     it('should set the loaded key to true on `loadReflectionsSuccess`', () => {
         const reflections = [
             {
-                _id: Guid.create(),
+                _id: Guid.create().toString(),
                 title: "Test",
                 text: "test text",
                 type: ReflectionType.Open,

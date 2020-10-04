@@ -21,7 +21,7 @@ describe('ReflectionsFacade', () => {
 
   describe('#loadReflection method', () => {
     it('should load a reflection', () => {
-      const testGuid = Guid.create();
+      const testGuid = Guid.create().toString();
 
       const dispatchSpy = spyOn(MOCK_STORE$, 'dispatch');
       const action = loadReflection({ reflectionId: testGuid });

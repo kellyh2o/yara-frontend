@@ -11,7 +11,6 @@ import { AuthState } from '../../models/auth-state.model';
 
 export const initialState: AuthState = {
   isAuth: false,
-  token: null,
   isTokenExpired: false,
   loading: false,
 };

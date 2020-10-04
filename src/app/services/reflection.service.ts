@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ReflectionResponse, ReflectionType } from './reflection-response.model'; 
-import { Guid } from 'guid-typescript';
 
 const BASE_URL = 'http://localhost:3000/api';
 const REFLECTIONS_URL = `${BASE_URL}/reflections`;
@@ -22,7 +21,7 @@ export class ReflectionService {
     return this.http.get<ReflectionResponse[]>(REFLECTIONS_URL);
   }
 
-  getReflection(reflectionId: Guid): Observable<ReflectionResponse> {
+  getReflection(reflectionId: string): Observable<ReflectionResponse> {
     return this.http.get<ReflectionResponse>(`${REFLECTIONS_URL}/${reflectionId}`);
   }
 
