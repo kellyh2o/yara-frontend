@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Reflection } from '../models/reflection.model';
 import { Observable } from 'rxjs';
 import { ReflectionsFacade } from './reflections.facade';
+import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-reflections',

@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { ApplicationState } from '../store/models/application-state.model';
 import { Reflection } from '../models/reflection.model';
 
-import { loadReflections, getReflections, getSelectedReflection } from '../store';
+import { loadReflections, getReflections, getSelectedReflection, loadReflection } from '../store';
+import { Guid } from 'guid-typescript';
 
 @Injectable({ providedIn: 'root' })
 export class ReflectionsFacade {
@@ -15,5 +16,9 @@ export class ReflectionsFacade {
 
   loadReflections(): void {
     this.store.dispatch(loadReflections());
+  }
+
+  loadReflection(reflectionId: Guid): void {
+    this.store.dispatch(loadReflection({ reflectionId }));
   }
 }
