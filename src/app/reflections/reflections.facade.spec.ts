@@ -1,6 +1,6 @@
 import { ReflectionsFacade } from './reflections.facade';
 import { MOCK_STORE$ } from '../store/testing';
-import { loadReflections, loadReflection, createNewReflection } from '../store';
+import { loadReflections, loadReflection, createNewReflection } from './store';
 import { Guid } from 'guid-typescript';
 
 describe('ReflectionsFacade', () => {

@@ -1,7 +1,7 @@
 import { ApplicationState } from '../models/application-state.model';
 import { AUTH_INITIAL_MOCK_STATE } from './auth-initial-mock-state';
-import { REFLECTION_INITIAL_MOCK_STATE } from './reflection-initial-mock-state';
-import { REFLECTIONS_INITIAL_MOCK_STATE } from './reflections-initial-mock-state';
+import { REFLECTION_INITIAL_MOCK_STATE } from '../../reflections/store/reflection-initial-mock-state';
+import { REFLECTIONS_INITIAL_MOCK_STATE } from '../../reflections/store/reflections-initial-mock-state';
 import { USER_INITIAL_MOCK_STATE } from './user-initial-mock-state';
 
 export const APP_INITIAL_MOCK_STATE: ApplicationState = {

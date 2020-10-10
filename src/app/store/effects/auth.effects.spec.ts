@@ -1,16 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Store } from '@ngrx/store';
-import { ReflectionResponse } from 'src/app/services/reflection-response.model';
-import { ReflectionService } from 'src/app/services/reflections.service';
 import { MOCK_STORE$ } from 'src/app/store/testing';
 import {
-  loadReflection,
-  loadReflections,
-  loadReflectionsFailure,
-  loadReflectionsSuccess,
-  loadReflectionFailure,
-  loadReflectionSuccess,
   requestLogin,
   requestLoginSuccess,
   requestLoginFailure,
@@ -19,7 +11,6 @@ import {
   requestRegistrationFailure,
 } from '../actions';
 import { AUTH_INITIAL_MOCK_STATE, MOCK_AUTH_RESPONSE } from '../state/auth-initial-mock-state';
-import { ReflectionEffects } from './reflection.effects';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 import { AuthResponse } from 'src/app/services/user-response.model';

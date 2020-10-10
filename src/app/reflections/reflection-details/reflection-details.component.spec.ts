@@ -2,9 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { ApplicationState } from 'src/app/store/models/application-state.model';
-import { REFLECTION_INITIAL_MOCK_STATE as initialState } from '../../store/state/reflection-initial-mock-state';
+import { REFLECTION_INITIAL_MOCK_STATE as initialState } from '../store/reflection-initial-mock-state';
 import { ReflectionDetailsComponent } from './reflection-details.component';
-import { getSelectedReflection } from '../../store';
+import { getSelectedReflection } from '../store';
 import { of } from 'rxjs';
 
 describe('ReflectionDetailsComponent', () => {

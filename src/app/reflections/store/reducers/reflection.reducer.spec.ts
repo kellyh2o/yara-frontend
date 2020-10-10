@@ -1,5 +1,5 @@
 import { reflectionReducer } from './reflection.reducer';
-import { REFLECTION_INITIAL_MOCK_STATE } from 'src/app/store/state/reflection-initial-mock-state';
+import { REFLECTION_INITIAL_MOCK_STATE } from '../reflection-initial-mock-state';
 import { ReflectionState } from '../reflection-state.model';
 import { loadReflection, loadReflectionSuccess, loadReflectionsFailure } from '../actions';
 

@@ -3,9 +3,13 @@ import { FormBuilder } from '@angular/forms';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { CreateReflectionComponent } from './create-reflection.component';
+import { ReflectionsFacade } from '../reflections/reflections.facade';
 import { ApplicationState } from '../store/models/application-state.model';
-import { Mock } from 'protractor/built/driverProviders';
-import { saveNewReflection, cancelNewReflection } from '../store';
+import { createNewReflection } from '../reflections/store';
+
+const MockReflectionsFacade = {
+  createReflection: (title: string, text: string) => null,
+};
 
 describe('CreateReflectionComponent', () => {
   let component: CreateReflectionComponent;
@@ -15,16 +19,37 @@ describe('CreateReflectionComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CreateReflectionComponent],
-      providers: [FormBuilder, provideMockStore()],
+      providers: [{ provide: ReflectionsFacade, useValue: MockReflectionsFacade }],
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CreateReflectionComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject(MockStore);
     fixture.detectChanges();
   });
 
-  // todo: test this?
+  it('should do something1', (done) => {
+    component.ngOnInit();
+
+    const dispatchSpy = spyOn(store, 'dispatch');
+    const action = createNewReflection({ title: '', text: ''});
+
+    component.submit();
+
+    expect(dispatchSpy).toHaveBeenCalledWith(action);
+
+  });
+
+  it('should do something2', (done) => {
+    component.ngOnInit();
+
+    const dispatchSpy = spyOn(store, 'dispatch');
+    const action = createNewReflection({ title: '', text: ''});
+
+    component.submit();
+
+
+    expect(MockReflectionsFacade.createReflection).toHaveBeenCalled();
+  })
 });

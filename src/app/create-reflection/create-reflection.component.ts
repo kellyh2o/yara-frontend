@@ -16,19 +16,15 @@ export class CreateReflectionComponent implements OnInit {
     private reflectionsFacade: ReflectionsFacade
     ) {}
 
-    ngOnInit() : void {
-      this.newReflectionForm = this.fb.group({
-        title: '',
-        text: '',
-      });
-    }
-  
-    submit() : void {
-      const { title, text } = this.newReflectionForm.value;
-      this.reflectionsFacade.createReflection(title, text);
-    }
+  ngOnInit() : void {
+    this.newReflectionForm = this.fb.group({
+      title: '',
+      text: '',
+    });
+  }
 
-  cancel() {
-    //this.store$.dispatch(cancelNewReflection());
+  submit() : void {
+    const { title, text } = this.newReflectionForm.value;
+    this.reflectionsFacade.createReflection(title, text);
   }
 }
