@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgrxModule } from './ngrx.module';
 import { LoginModule } from './login/login.module';
+import { LogoutModule } from './logout/logout.module';
 import { HeaderModule } from './header/header.module';
 import { HomeModule } from './home/home.module'; 
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
@@ -22,6 +23,7 @@ import { httpInterceptorProviders } from './http-interceptors';
     CommonModule,
     NgrxModule,
     LoginModule,
+    LogoutModule,
     HeaderModule,
     HomeModule,
     PageNotFoundModule,

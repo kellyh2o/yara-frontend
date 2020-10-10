@@ -9,8 +9,11 @@
       routerLinkActive="router-link-active"
       >{{ link.title }}</a
     >
-  </li>  
-  <li ngbNavItem="/" *ngIf="isAuth">
-    <a ngbNavLink routerLink="/">Logout</a>
+  </li> 
+  <li ngbNavItem="/login" *ngIf="!isAuth">
+    <a ngbNavLink routerLink="/login">Login</a>
+  </li> 
+  <li ngbNavItem="/logout" *ngIf="isAuth">
+    <a ngbNavLink routerLink="/logout">Logout</a>
   </li>
 </ul>

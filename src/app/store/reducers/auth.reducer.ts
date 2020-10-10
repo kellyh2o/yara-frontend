@@ -6,6 +6,7 @@ import {
   requestRegistration,
   requestRegistrationFailure,
   requestRegistrationSuccess,
+  logout
 } from '../actions/auth.actions';
 import { AuthState } from '../models/auth-state.model';
 
@@ -38,7 +39,11 @@ const reducer = createReducer(
     ...state,
     isAuth: false,
     loading: false,
-  }))
+  })),
+  on(logout, (state) => ({
+    ...state,
+    isAuth: false
+  })),
 );
 
 export function authReducer(state: AuthState | undefined, action: Action) {

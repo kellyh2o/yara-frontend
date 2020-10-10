@@ -31,13 +31,16 @@ export const requestLoginFailure = createAction(
   props<{ error: any }>()
 );
 
+export const logout = createAction('[API - User] Logout User');
+
 const all = union({
   requestRegistration,
   requestRegistrationSuccess,
   requestRegistrationFailure,
   requestLogin,
   requestLoginSuccess,
-  requestLoginFailure
+  requestLoginFailure,
+  logout
 });
 
 export type AuthActionTypes = typeof all;

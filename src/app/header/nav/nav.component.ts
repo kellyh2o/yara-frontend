@@ -18,8 +18,7 @@ export class NavComponent {
   links: NavLinks[] = [
     { title: 'Dashboard', fragment: '/' },
     { title: 'Reflections', fragment: '/reflections' },
-    { title: 'Create Reflection', fragment: '/reflections/create' },
-    { title: 'Login', fragment: '/login' },
+    { title: 'Create Reflection', fragment: '/reflections/create' }
   ];
 
   constructor(public route: ActivatedRoute) {}
