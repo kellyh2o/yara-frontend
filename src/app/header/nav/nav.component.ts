@@ -16,7 +16,6 @@ export class NavComponent {
 
   title = 'Y A R A';
   links: NavLinks[] = [
-    { title: 'Dashboard', fragment: '/' },
     { title: 'Reflections', fragment: '/reflections' },
     { title: 'Create Reflection', fragment: '/reflections/create' }
   ];
