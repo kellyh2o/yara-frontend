@@ -11,7 +11,7 @@ import {
     createNewReflectionSuccess,
     createNewReflectionFailure
 } from '../actions';
-import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { routeChange } from 'src/app/store/actions/router.actions';
@@ -21,6 +21,7 @@ import { load$ } from 'src/app/store/router-helpers';
 import { ReflectionState } from '../reflection-state.model';
 import { ApplicationState } from 'src/app/store/models/application-state.model';
 import { ReflectionsService } from 'src/app/services/reflections.service';
+import { Router } from '@angular/router';
 
 
 @Injectable({ providedIn: 'root' })
@@ -70,9 +71,23 @@ export class ReflectionsEffects {
     )
   );
 
+  // side effect
+  createRegistrationSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(createNewReflectionSuccess),
+        tap(() => {
+          this.router.navigateByUrl('/');
+        })
+      ),
+    { dispatch: false }
+  );
+  
+
   constructor(
     private actions$: Actions,
     private store: Store<ApplicationState>,
-    private reflectionsService: ReflectionsService
+    private reflectionsService: ReflectionsService,
+    private router: Router
   ) {}
 }
