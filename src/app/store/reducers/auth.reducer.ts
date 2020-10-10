@@ -7,7 +7,7 @@ import {
   requestRegistrationFailure,
   requestRegistrationSuccess,
 } from '../actions/auth.actions';
-import { AuthState } from '../../models/auth-state.model';
+import { AuthState } from '../models/auth-state.model';
 
 export const initialState: AuthState = {
   isAuth: false,

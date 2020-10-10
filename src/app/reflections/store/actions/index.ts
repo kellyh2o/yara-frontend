@@ -1,5 +1,5 @@
 import { createAction, props, union } from '@ngrx/store';
-import { Reflection } from 'src/app/models/reflection.model';
+import { Reflection } from '../../models/reflection.model';
 
 // Click Events
 export const addReflection = createAction(

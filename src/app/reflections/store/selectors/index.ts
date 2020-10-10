@@ -1,9 +1,9 @@
 import { createSelector } from '@ngrx/store';
-import { ApplicationState } from '../models/application-state.model';
-import { ReflectionState } from '../models/reflection-state.model';
-import { ReflectionsState } from '../models/reflections-state.model';
 import { Params } from '@angular/router';
 import { getRouteParams } from 'src/app/store/selectors/router.selectors';
+import { ApplicationState } from 'src/app/store/models/application-state.model';
+import { ReflectionsState } from '../reflections-state.model';
+import { ReflectionState } from '../reflection-state.model';
 
 export const reflectionsState = ({ reflectionsState }: ApplicationState) => reflectionsState;
 export const selectedReflectionState = ({ selectedReflection }: ApplicationState) => selectedReflection;

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList, Input } from '@angular/core';
-import { Reflection } from '../../../models/reflection.model';
+import { Reflection } from '../../models/reflection.model';
 import {
   SortableHeaderDirective,
   SortEvent,

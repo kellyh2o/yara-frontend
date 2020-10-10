@@ -10,26 +10,26 @@ import {
     createNewReflection,
     createNewReflectionSuccess,
     createNewReflectionFailure
-} from '../actions/reflection.actions';
-import { ReflectionService } from '../../services/reflection.service';
+} from '../actions';
 import { catchError, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { ReflectionResponse, ReflectionType } from '../../services/reflection-response.model';
 import { Injectable } from '@angular/core';
-import { ApplicationState } from '../models/application-state.model';
-import { ReflectionState } from '../models/reflection-state.model';
 import { routeChange } from 'src/app/store/actions/router.actions';
-import { load$ } from '../../store/router-helpers';
 import { selectedReflectionState } from '../selectors'
+import { ReflectionResponse, ReflectionType } from 'src/app/services/reflection-response.model';
+import { load$ } from 'src/app/store/router-helpers';
+import { ReflectionState } from '../reflection-state.model';
+import { ApplicationState } from 'src/app/store/models/application-state.model';
+import { ReflectionsService } from 'src/app/services/reflections.service';
 
 
 @Injectable({ providedIn: 'root' })
-export class ReflectionEffects {
+export class ReflectionsEffects {
   loadReflections$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadReflections),
       switchMap(() =>
-        this.reflectionService.getReflections().pipe(
+        this.reflectionsService.getReflections().pipe(
           map((reflections: ReflectionResponse[]) => loadReflectionsSuccess({ reflections })),
           catchError((error) => of(loadReflectionsFailure({ error })))
         )
@@ -42,7 +42,7 @@ export class ReflectionEffects {
     this.actions$.pipe(
       ofType(loadReflection),
       switchMap(( { reflectionId }) =>
-        this.reflectionService.getReflection(reflectionId).pipe(
+        this.reflectionsService.getReflection(reflectionId).pipe(
           map((reflection: ReflectionResponse) => loadReflectionSuccess({ reflection })),
           catchError((error) => of(loadReflectionFailure({ error })))
         )
@@ -54,7 +54,7 @@ export class ReflectionEffects {
     this.actions$.pipe(
       ofType(createNewReflection),
       switchMap(( { title, text }) =>
-        this.reflectionService.createReflection(title, text, ReflectionType.Open).pipe(
+        this.reflectionsService.createReflection(title, text, ReflectionType.Open).pipe(
           map(() => createNewReflectionSuccess()),
           catchError((error) => of(createNewReflectionFailure({ error })))
         )
@@ -73,6 +73,6 @@ export class ReflectionEffects {
   constructor(
     private actions$: Actions,
     private store: Store<ApplicationState>,
-    private reflectionService: ReflectionService
+    private reflectionsService: ReflectionsService
   ) {}
 }

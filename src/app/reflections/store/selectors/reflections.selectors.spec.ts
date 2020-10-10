@@ -1,6 +1,6 @@
-import { getReflections, getReflectionsLoaded, getSelectedReflection, getShowReflections, getShowNewReflectionForm, getSelectedReflectionId } from './reflection.selectors';
-import { REFLECTIONS_INITIAL_MOCK_STATE } from '../state/reflections-initial-mock-state';
-import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
+import { REFLECTIONS_INITIAL_MOCK_STATE } from '../reflections-initial-mock-state';
+import { REFLECTION_INITIAL_MOCK_STATE } from '../reflection-initial-mock-state';
+import { getShowReflections, getShowNewReflectionForm, getReflections, getReflectionsLoaded, getSelectedReflection } from '.';
 
 const reflectionsState = REFLECTIONS_INITIAL_MOCK_STATE;
 const reflectionState = REFLECTION_INITIAL_MOCK_STATE;

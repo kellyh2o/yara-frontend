@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ApplicationState } from '../store/models/application-state.model';
-import { Reflection } from '../models/reflection.model';
+import { Reflection } from './models/reflection.model';
 
-import { loadReflections, getReflections, getSelectedReflection, loadReflection, getShowReflections, getShowNewReflectionForm, createNewReflection } from '../store';
+import { loadReflections, getReflections, getSelectedReflection, loadReflection, getShowReflections, getShowNewReflectionForm, createNewReflection } from './store';
 
 @Injectable({ providedIn: 'root' })
 export class ReflectionsFacade {

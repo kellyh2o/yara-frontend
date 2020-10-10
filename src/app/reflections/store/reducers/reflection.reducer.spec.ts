@@ -1,7 +1,7 @@
-import { ReflectionState } from '../models/reflection-state.model';
-import { addReflection, cancelNewReflection, saveNewReflection, loadReflections, loadReflectionsSuccess, loadReflectionsFailure, loadReflection, loadReflectionSuccess } from '../actions/reflection.actions';
-import { REFLECTION_INITIAL_MOCK_STATE } from '../state/reflection-initial-mock-state';
 import { reflectionReducer } from './reflection.reducer';
+import { REFLECTION_INITIAL_MOCK_STATE } from 'src/app/store/state/reflection-initial-mock-state';
+import { ReflectionState } from '../reflection-state.model';
+import { loadReflection, loadReflectionSuccess, loadReflectionsFailure } from '../actions';
 
 
 describe('Reflection Reducer', () => {

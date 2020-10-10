@@ -1,4 +1,4 @@
-import { Reflection } from '../../models/reflection.model';
+import { Reflection } from '../models/reflection.model';
 
 export interface ReflectionState {
     readonly reflection: Reflection;

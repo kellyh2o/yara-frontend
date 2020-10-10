@@ -28,7 +28,7 @@ export const load$ = <T>(loadAction, route: string | string[]) => (
   source.pipe(
     ofRoute<T>(route),
     map(([action, state]) => {
-      const reflectionId = action['params'].reflectionId;
-      return loadAction({ reflectionId });
+      const heroId = action['params'].heroId;
+      return loadAction({ heroId });
     })
   );

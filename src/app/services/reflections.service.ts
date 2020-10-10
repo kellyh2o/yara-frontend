@@ -6,15 +6,10 @@ import { ReflectionResponse, ReflectionType } from './reflection-response.model'
 const BASE_URL = 'http://localhost:3000/api';
 const REFLECTIONS_URL = `${BASE_URL}/reflections`;
 
-const header = (token: string) => ({
-  Authorization: `Bearer ${token}`,
-  'Content-Type': 'application/json',
-});
-
 @Injectable({
   providedIn: 'root'
 })
-export class ReflectionService {
+export class ReflectionsService {
   constructor(private http: HttpClient) { }
 
   getReflections(): Observable<ReflectionResponse[]> {

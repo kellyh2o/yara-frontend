@@ -1,5 +1,5 @@
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
-import { Reflection } from '../../../models/reflection.model';
+import { Reflection } from '../../models/reflection.model';
 import { Guid } from 'guid-typescript';
 
 export type SortColumn = keyof Reflection | '';

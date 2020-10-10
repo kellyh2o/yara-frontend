@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Reflection } from '../models/reflection.model';
+import { Reflection } from './models/reflection.model';
 import { Observable } from 'rxjs';
 import { ReflectionsFacade } from './reflections.facade';
 

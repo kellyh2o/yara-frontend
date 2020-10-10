@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Store } from '@ngrx/store';
 import { ReflectionResponse } from 'src/app/services/reflection-response.model';
-import { ReflectionService } from 'src/app/services/reflection.service';
+import { ReflectionsService } from 'src/app/services/reflections.service';
 import { MOCK_STORE$ } from 'src/app/store/testing';
 import {
   loadReflection,
@@ -15,8 +15,8 @@ import {
   createNewReflectionSuccess,
   createNewReflectionFailure,
 } from '../actions';
-import { MOCK_REFLECTION } from '../state/reflection-initial-mock-state';
-import { ReflectionEffects } from './reflection.effects';
+import { MOCK_REFLECTION } from '../reflection-initial-mock-state';
+import { ReflectionsEffects } from './reflections.effects';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 
@@ -30,20 +30,20 @@ const mockReflectionsResponse: ReflectionResponse[] = [MOCK_REFLECTION];
 
 describe('ReflectionsEffects', () => {
   let actions$: Observable<any>;
-  let reflectionsService: ReflectionService;
-  let effects: ReflectionEffects;
+  let reflectionsService: ReflectionsService;
+  let effects: ReflectionsEffects;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        ReflectionEffects,
+        ReflectionsEffects,
         provideMockActions(() => actions$),
         { provide: Store, useValue: MOCK_STORE$ },
-        { provide: ReflectionService, useValue: mockReflectionsService },
+        { provide: ReflectionsService, useValue: mockReflectionsService },
       ],
     });
-    effects = TestBed.inject(ReflectionEffects);
-    reflectionsService = TestBed.inject(ReflectionService);
+    effects = TestBed.inject(ReflectionsEffects);
+    reflectionsService = TestBed.inject(ReflectionsService);
   });
 
   describe('loadReflections$', () => {

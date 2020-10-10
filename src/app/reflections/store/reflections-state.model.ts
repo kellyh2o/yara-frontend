@@ -1,4 +1,4 @@
-import { Reflection } from '../../models/reflection.model';
+import { Reflection } from '../models/reflection.model';
 
 export interface ReflectionsState {
     readonly showReflections: boolean;

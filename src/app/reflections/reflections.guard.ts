@@ -7,7 +7,7 @@ import {
 import { Store } from '@ngrx/store';
 
 import { ApplicationState } from '../store/models/application-state.model';
-import { loadReflections, getReflectionsLoaded } from '../store';
+import { loadReflections, getReflectionsLoaded } from './store';
 import { catchError, switchMap, filter, first, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 

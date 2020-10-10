@@ -2,7 +2,7 @@
 <div class="container-width-full">
     <table class="table" *ngIf="reflections; else loadingReflections">
         <tbody>
-            <tr *ngFor="let reflection of reflections">
+            <tr *ngFor="let reflection of reflections; let id = index">
                 <td>
                     <div>
                         <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
