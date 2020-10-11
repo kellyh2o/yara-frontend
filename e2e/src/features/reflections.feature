@@ -32,7 +32,4 @@ Feature: Reflections
     Then I see the authenticated home page
     And I navigate to the create reflection page
     Then I see a form where I can enter a reflection
-    When I click save
-    Then I navigate to the reflections page
-    Then I see my new reflection in the list
 
