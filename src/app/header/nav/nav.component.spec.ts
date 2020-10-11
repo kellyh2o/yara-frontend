@@ -33,8 +33,7 @@ describe('NavComponent', () => {
   it('should display an array of links', () => {
     const links = [
       { title: 'Reflections', fragment: '/reflections' },
-      { title: 'Create Reflection', fragment: '/reflections/create'},
-      { title: 'Login', fragment: '/login' },
+      { title: 'Create Reflection', fragment: '/reflections/create'}
     ];
 
     expect(component.links).toEqual(links);

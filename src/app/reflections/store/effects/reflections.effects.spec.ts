@@ -19,11 +19,12 @@ import { MOCK_REFLECTION } from '../reflection-initial-mock-state';
 import { ReflectionsEffects } from './reflections.effects';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 const mockReflectionsService = {
   getReflections: () => of([MOCK_REFLECTION]),
   getReflection: () => of(MOCK_REFLECTION),
-  createReflection: (title, text, type) => {}
+  createReflection: (title, text) => {}
 };
 
 const mockReflectionsResponse: ReflectionResponse[] = [MOCK_REFLECTION];
@@ -35,6 +36,7 @@ describe('ReflectionsEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       providers: [
         ReflectionsEffects,
         provideMockActions(() => actions$),

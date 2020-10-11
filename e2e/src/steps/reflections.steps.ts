@@ -1,5 +1,5 @@
-import { HeroesPage } from '../pages/heroes.po';
+// import { HeroesPage } from '../pages/heroes.po';
 
-const heroesPage = new HeroesPage();
+// const heroesPage = new HeroesPage();
 
-// Thens
+// // Thens

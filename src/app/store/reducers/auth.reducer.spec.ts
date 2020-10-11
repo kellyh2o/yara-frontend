@@ -1,5 +1,5 @@
 import { AuthState } from '../models/auth-state.model';
-import { requestLogin, requestLoginSuccess, requestLoginFailure, requestRegistration, requestRegistrationSuccess, requestRegistrationFailure } from '../actions/auth.actions';
+import { requestLogin, requestLoginSuccess, requestLoginFailure, requestRegistration, requestRegistrationSuccess, requestRegistrationFailure, logout } from '../actions/auth.actions';
 import { AUTH_INITIAL_MOCK_STATE } from '../state/auth-initial-mock-state';
 import { authReducer } from './auth.reducer';
 
@@ -147,6 +147,17 @@ describe('Auth Reducer', () => {
       ...AUTH_INITIAL_MOCK_STATE,
       isAuth: false,
       loading: false
+    };
+    const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should set the isAuth key to false on `logout`', () => {
+    const action = logout();
+    const expected: AuthState = {
+      ...AUTH_INITIAL_MOCK_STATE,
+      isAuth: false,
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
 

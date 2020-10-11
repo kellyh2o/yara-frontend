@@ -6,10 +6,7 @@ import { CreateReflectionComponent } from './create-reflection.component';
 import { ReflectionsFacade } from '../reflections/reflections.facade';
 import { ApplicationState } from '../store/models/application-state.model';
 import { createNewReflection } from '../reflections/store';
-
-const MockReflectionsFacade = {
-  createReflection: (title: string, text: string) => null,
-};
+import { logout } from '../store';
 
 describe('CreateReflectionComponent', () => {
   let component: CreateReflectionComponent;
@@ -19,37 +16,21 @@ describe('CreateReflectionComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CreateReflectionComponent],
-      providers: [{ provide: ReflectionsFacade, useValue: MockReflectionsFacade }],
+      providers: [FormBuilder, provideMockStore()],
     }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CreateReflectionComponent);
     component = fixture.componentInstance;
+    store = TestBed.inject(MockStore);
     fixture.detectChanges();
   });
 
-  it('should do something1', (done) => {
-    component.ngOnInit();
-
+  it('should dispatch a create new reflection action via the facade on submit', () => {
     const dispatchSpy = spyOn(store, 'dispatch');
     const action = createNewReflection({ title: '', text: ''});
-
     component.submit();
-
     expect(dispatchSpy).toHaveBeenCalledWith(action);
-
   });
-
-  it('should do something2', (done) => {
-    component.ngOnInit();
-
-    const dispatchSpy = spyOn(store, 'dispatch');
-    const action = createNewReflection({ title: '', text: ''});
-
-    component.submit();
-
-
-    expect(MockReflectionsFacade.createReflection).toHaveBeenCalled();
-  })
 });
