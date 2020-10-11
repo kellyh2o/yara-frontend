@@ -1,0 +1,436 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Application Globals",
+    "line": 2,
+    "id": "application-globals",
+    "tags": [
+      {
+        "name": "@FE",
+        "line": 1
+      },
+      {
+        "name": "@app",
+        "line": 1
+      }
+    ],
+    "uri": "e2e/src/features/app.feature",
+    "elements": [
+      {
+        "id": "application-globals;as-an-unauthenticated-user,-i-can-see-the-app-nav-menu",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "As an unauthenticated user, I can see the app nav menu",
+        "tags": [
+          {
+            "name": "@FE",
+            "line": 1
+          },
+          {
+            "name": "@app",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 441000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "I see the main nav menu banner",
+            "match": {
+              "location": "e2e/src/steps/app.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 978000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "application-globals;as-an-authenticated-user,-i-can-see-the-logout-button-in-the-nav-menu",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "As an authenticated user, I can see the logout button in the nav menu",
+        "tags": [
+          {
+            "name": "@FE",
+            "line": 1
+          },
+          {
+            "name": "@app",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 559000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I enter my credentials",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I see the authenticated home page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I see the main nav menu banner",
+            "match": {
+              "location": "e2e/src/steps/app.steps.ts:11"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I see the logout button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 927000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Reflections",
+    "line": 2,
+    "id": "reflections",
+    "tags": [
+      {
+        "name": "@FE",
+        "line": 1
+      },
+      {
+        "name": "@reflections",
+        "line": 1
+      }
+    ],
+    "uri": "e2e/src/features/reflections.feature",
+    "elements": [
+      {
+        "id": "reflections;as-an-authenticated-user,-i-can-see-a-list-of-reflections-on-the-home-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "As an authenticated user, I can see a list of reflections on the home page",
+        "tags": [
+          {
+            "name": "@FE",
+            "line": 1
+          },
+          {
+            "name": "@reflections",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 437000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter my credentials",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I see the authenticated home page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "I see a list of reflections",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 995000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "reflections;as-an-authenticated-user,-i-can-list-of-reflections-on-the-reflections-page",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "As an authenticated user, I can list of reflections on the reflections page",
+        "tags": [
+          {
+            "name": "@FE",
+            "line": 1
+          },
+          {
+            "name": "@reflections",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 550000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I enter my credentials",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I see the authenticated home page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I navigate to the heroes page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I see a list of heroes",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 937000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "reflections;as-an-authenticated-user,-i-can-select-a-single-hero",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "As an authenticated user, I can select a single hero",
+        "tags": [
+          {
+            "name": "@FE",
+            "line": 1
+          },
+          {
+            "name": "@reflections",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "I enter my credentials",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "I see the authenticated home page",
+            "match": {
+              "location": "e2e/src/steps/auth.steps.ts:15"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I navigate to the heroes page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "I see a list of heroes",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I select a single hero",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I see that heroes details",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 915000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,24 +1,24 @@
-@FE @heroes
-Feature: Heroes
+@FE @reflections
+Feature: Reflections
 
-  Scenario: As an authenticated user, I can see a budget and list of heroes on the home page
+  Scenario: As an authenticated user, I can see a list of reflections on the home page
     Given I navigate to the login page
     When I enter my credentials
     And I see the authenticated home page
-    Then I see a list of heroes
+    Then I see a list of reflections
 
-  Scenario: As an authenticated user, I can list of heroes on the heroes page
+  Scenario: As an authenticated user, I can list of reflections on the reflections page
     Given I navigate to the login page
     When I enter my credentials
     Then I see the authenticated home page
-    And I navigate to the heroes page
-    Then I see a list of heroes
+    And I navigate to the reflections page
+    Then I see a list of reflections
 
-  Scenario: As an authenticated user, I can select a single hero
+  Scenario: As an authenticated user, I can select a single reflection
     Given I navigate to the login page
     When I enter my credentials
     Then I see the authenticated home page
-    And I navigate to the heroes page
-    Then I see a list of heroes
-    When I select a single hero
-    Then I see that heroes details
+    And I navigate to the reflections page
+    Then I see a list of reflections
+    When I select a single reflection
+    Then I see that reflections details
