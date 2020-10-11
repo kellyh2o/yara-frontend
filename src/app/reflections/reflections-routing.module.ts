@@ -16,7 +16,7 @@ const routes: Routes = [
     component: CreateReflectionComponent
   },
   {
-    path: 'reflections/:reflectionId',
+    path: ':reflectionId',
     component: ReflectionDetailsComponent,
     canActivate: [ReflectionsGuard],
   },

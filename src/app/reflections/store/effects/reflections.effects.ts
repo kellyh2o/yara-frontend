@@ -14,7 +14,6 @@ import {
 import { catchError, map, switchMap, withLatestFrom, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { routeChange } from 'src/app/store/actions/router.actions';
 import { selectedReflectionState } from '../selectors'
 import { ReflectionResponse, ReflectionType } from 'src/app/services/reflection-response.model';
 import { load$ } from 'src/app/store/router-helpers';
@@ -22,6 +21,7 @@ import { ReflectionState } from '../reflection-state.model';
 import { ApplicationState } from 'src/app/store/models/application-state.model';
 import { ReflectionsService } from 'src/app/services/reflections.service';
 import { Router } from '@angular/router';
+import { routeChange } from 'src/app/store';
 
 
 @Injectable({ providedIn: 'root' })
@@ -67,7 +67,7 @@ export class ReflectionsEffects {
     this.actions$.pipe(
       ofType(routeChange),
       withLatestFrom(this.store.select(selectedReflectionState)),
-      load$<ReflectionState>(loadReflection, ':reflectionId')
+      load$<ReflectionState>(loadReflection, 'reflections/:reflectionId')
     )
   );
 

@@ -13,7 +13,7 @@
   <li ngbNavItem="/login" *ngIf="!isAuth">
     <a ngbNavLink routerLink="/login">Login</a>
   </li> 
-  <li ngbNavItem="/logout" *ngIf="isAuth">
+  <li ngbNavItem="/logout" id="logout" *ngIf="isAuth">
     <a ngbNavLink routerLink="/logout">Logout</a>
   </li>
 </ul>

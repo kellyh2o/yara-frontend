@@ -44,4 +44,25 @@ export class BasePage {
     await browser.wait(ExpectedConditions.visibilityOf(currentElement));
     await currentElement.sendKeys(inputValue);
   }
+
+  /**
+   * Inputs values into element if visible
+   * @param selector
+   * @param inputValue
+   */
+  async clickElement(
+    selector: string
+  ): Promise<void> {
+    const currentElement = element(by.css(selector));
+    await browser.wait(ExpectedConditions.visibilityOf(currentElement));
+    await currentElement.click();
+  }
+
+  // async findElementByClass(
+  //   className: string
+  // ): Promise<void> {
+  //   const currentElement = element(by.className(className));
+  //   await browser.wait(ExpectedConditions.visibilityOf(currentElement));
+  //   await currentElement.click();
+  // }
 }
