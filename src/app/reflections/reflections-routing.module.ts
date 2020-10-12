@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReflectionsGuard } from './reflections.guard';
 import { ReflectionsComponent } from './reflections.component';
 import { ReflectionDetailsComponent } from './reflection-details/reflection-details.component';
+import { CreateReflectionComponent } from '../create-reflection/create-reflection.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,11 @@ const routes: Routes = [
     component: ReflectionsComponent,
   },
   {
-    path: 'reflections/:reflectionId',
+    path: 'create',
+    component: CreateReflectionComponent
+  },
+  {
+    path: ':reflectionId',
     component: ReflectionDetailsComponent,
     canActivate: [ReflectionsGuard],
   },

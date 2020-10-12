@@ -1,9 +1,9 @@
 import { RouterReducerState } from '@ngrx/router-store';
 import { AuthState } from './auth-state.model';
 import { UserState } from './user-state.model';
-import { ReflectionState } from './reflection-state.model';
-import { ReflectionsState } from './reflections-state.model';
 import { RouterStateUrl } from './router.models';
+import { ReflectionsState } from '../../reflections/store/reflections-state.model';
+import { ReflectionState } from '../../reflections/store/reflection-state.model';
 
 
 export interface ApplicationState {

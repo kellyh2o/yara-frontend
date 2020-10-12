@@ -3,9 +3,10 @@ import { FormBuilder } from '@angular/forms';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { CreateReflectionComponent } from './create-reflection.component';
+import { ReflectionsFacade } from '../reflections/reflections.facade';
 import { ApplicationState } from '../store/models/application-state.model';
-import { Mock } from 'protractor/built/driverProviders';
-import { saveNewReflection, cancelNewReflection } from '../store';
+import { createNewReflection } from '../reflections/store';
+import { logout } from '../store';
 
 describe('CreateReflectionComponent', () => {
   let component: CreateReflectionComponent;
@@ -26,17 +27,10 @@ describe('CreateReflectionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should dispatch saveNewReflection on submit', () => {
+  it('should dispatch a create new reflection action via the facade on submit', () => {
     const dispatchSpy = spyOn(store, 'dispatch');
-    const action = saveNewReflection();
+    const action = createNewReflection({ title: '', text: ''});
     component.submit();
-    expect(dispatchSpy).toHaveBeenCalledWith(action);
-  });
-
-  it('should dispatch cancelNewReflection on cancel', () => {
-    const dispatchSpy = spyOn(store, 'dispatch');
-    const action = cancelNewReflection();
-    component.cancel();
     expect(dispatchSpy).toHaveBeenCalledWith(action);
   });
 });

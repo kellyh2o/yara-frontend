@@ -4,8 +4,13 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 import { HomeComponent } from './home.component';
 
 import { MemoizedSelector } from '@ngrx/store';
-import { ReflectionState } from '../store/models/reflection-state.model';
-import { getShowReflections, getShowNewReflectionForm } from '../store';
+import { ReflectionState } from '../reflections/store/reflection-state.model';
+import { getShowReflections, getShowNewReflectionForm, loadReflections } from '../reflections/store';
+import { REFLECTIONS_INITIAL_MOCK_STATE as initialState } from '../reflections/store/reflections-initial-mock-state';
+import { MOCK_REFLECTION } from '../reflections/store/reflection-initial-mock-state';
+import { of } from 'rxjs';
+import { ReflectionsFacade } from '../reflections/reflections.facade';
+import { ApplicationState } from '../store/models/application-state.model';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -13,6 +18,8 @@ describe('HomeComponent', () => {
   let mockStore: MockStore;
   let mockGetShowReflectionsSelector: MemoizedSelector<ReflectionState, boolean>;
   let mockGetShowNewReflectionSelector: MemoizedSelector<ReflectionState, boolean>;
+  let store: MockStore<ApplicationState>;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -71,6 +78,5 @@ describe('HomeComponent', () => {
       done();
     });
   });
-
 });
 

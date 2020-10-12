@@ -7,8 +7,8 @@ import {
   appState, 
   AuthEffects, 
   CustomSerializer, 
-  RouterEffects, 
-  ReflectionEffects } from './store';
+  RouterEffects } from './store';
+import { ReflectionsEffects } from './reflections/store';
 
 @NgModule({
   declarations: [],
@@ -18,7 +18,7 @@ import {
     StoreRouterConnectingModule.forRoot({
       serializer: CustomSerializer,
     }),
-    EffectsModule.forRoot([RouterEffects, AuthEffects, ReflectionEffects])
+    EffectsModule.forRoot([RouterEffects, AuthEffects, ReflectionsEffects])
   ],
 })
 export class NgrxModule {}

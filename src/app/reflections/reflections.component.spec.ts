@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { REFLECTIONS_INITIAL_MOCK_STATE as initialState } from '../store/state/reflections-initial-mock-state';
-import { MOCK_REFLECTION } from '../store/state/reflection-initial-mock-state';
+import { REFLECTIONS_INITIAL_MOCK_STATE as initialState } from './store/reflections-initial-mock-state';
 
 import { ReflectionsComponent } from './reflections.component';
 import { ReflectionsFacade } from './reflections.facade';
+import { MOCK_REFLECTION } from './store/reflection-initial-mock-state';
 
 const MockReflectionsFacade = {
   reflections$: of([MOCK_REFLECTION]),

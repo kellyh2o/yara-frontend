@@ -1,11 +1,11 @@
 
-<div class="container-width-full">
+<div class="container-width-full" id="reflections-list">
     <table class="table" *ngIf="reflections; else loadingReflections">
         <tbody>
-            <tr *ngFor="let reflection of reflections">
+            <tr *ngFor="let reflection of reflections; let id = index">
                 <td>
                     <div>
-                        <a [routerLink]="['/reflections', reflection._id]" class="reflection-title">
+                        <a [routerLink]="['/reflections', reflection._id]" class="reflection-title" (click)="selectReflection(reflection._id)">
                             {{ reflection.title }}
                         </a>
                         <p class="reflection-date">

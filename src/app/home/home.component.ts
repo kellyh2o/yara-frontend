@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { ApplicationState } from '../store/models/application-state.model';
-import { getShowReflections, getShowNewReflectionForm } from '../store';
+import { getShowReflections, getShowNewReflectionForm } from '../reflections/store';
 import { Observable } from 'rxjs';
-import { Reflection } from '../models/reflection.model';
+import { Reflection } from '../reflections/models/reflection.model';
 import { ReflectionsFacade } from '../reflections/reflections.facade';
 
 @Component({
