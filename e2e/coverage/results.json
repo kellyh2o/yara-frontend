@@ -43,7 +43,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 449000000
+              "duration": 487000000
             }
           },
           {
@@ -56,7 +56,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51000000
+              "duration": 73000000
             }
           },
           {
@@ -67,7 +67,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 998000000
+              "duration": 1082000000
             }
           }
         ]
@@ -99,7 +99,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 434000000
+              "duration": 594000000
             }
           },
           {
@@ -112,7 +112,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 264000000
+              "duration": 318000000
             }
           },
           {
@@ -125,7 +125,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 128000000
+              "duration": 192000000
             }
           },
           {
@@ -136,7 +136,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 926000000
+              "duration": 1101000000
             }
           }
         ]
@@ -187,7 +187,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 453000000
+              "duration": 581000000
             }
           },
           {
@@ -200,7 +200,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 272000000
+              "duration": 335000000
             }
           },
           {
@@ -213,7 +213,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 123000000
+              "duration": 191000000
             }
           },
           {
@@ -226,7 +226,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 41000000
+              "duration": 46000000
             }
           },
           {
@@ -237,7 +237,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1002000000
+              "duration": 1022000000
             }
           }
         ]
@@ -269,7 +269,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 472000000
+              "duration": 676000000
             }
           },
           {
@@ -282,7 +282,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 283000000
+              "duration": 319000000
             }
           },
           {
@@ -295,7 +295,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 123000000
+              "duration": 167000000
             }
           },
           {
@@ -308,7 +308,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 79000000
+              "duration": 88000000
             }
           },
           {
@@ -321,7 +321,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 56000000
+              "duration": 60000000
             }
           },
           {
@@ -331,9 +331,8 @@
               "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
             },
             "result": {
-              "status": "failed",
-              "duration": 5004000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout._onTimeout (/Users/kellywatermeyer/Developer/MSSE663/yara-frontend/node_modules/cucumber/lib/user_code_runner.js:76:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "passed",
+              "duration": 1016000000
             }
           }
         ]
@@ -365,7 +364,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1456000000
+              "duration": 600000000
             }
           },
           {
@@ -378,7 +377,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 338000000
+              "duration": 320000000
             }
           },
           {
@@ -391,7 +390,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 163000000
+              "duration": 176000000
             }
           },
           {
@@ -404,7 +403,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 97000000
+              "duration": 96000000
             }
           },
           {
@@ -417,7 +416,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 77000000
+              "duration": 52000000
             }
           },
           {
@@ -430,7 +429,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 99000000
+              "duration": 90000000
             }
           },
           {
@@ -443,7 +442,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 66000000
+              "duration": 50000000
             }
           },
           {
@@ -456,7 +455,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 60000000
+              "duration": 44000000
             }
           },
           {
@@ -469,7 +468,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 61000000
+              "duration": 42000000
             }
           },
           {
@@ -480,7 +479,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1040000000
+              "duration": 1259000000
             }
           }
         ]
@@ -512,7 +511,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 434000000
+              "duration": 613000000
             }
           },
           {
@@ -525,7 +524,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 314000000
+              "duration": 316000000
             }
           },
           {
@@ -538,7 +537,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 134000000
+              "duration": 158000000
             }
           },
           {
@@ -551,7 +550,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 76000000
+              "duration": 80000000
             }
           },
           {
@@ -564,7 +563,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 45000000
+              "duration": 48000000
             }
           },
           {
@@ -575,7 +574,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 988000000
+              "duration": 1119000000
             }
           }
         ]
