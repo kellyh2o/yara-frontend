@@ -8,6 +8,8 @@ The primary objective of the YARA (Yet Another Reflection App) website is to pro
 
 The rationale behind these features stems from a study done by a Harvard-trained happiness researcher named Shawn Achor. His research showed that “we can actually rewire our brain, allowing it to work more optimistically and more successfully”. Achor recommends five techniques, two of which are “spending two minutes a day writing down three new things you are grateful for”, and “journaling one positive experience” (Schwantes, 2016). I have personally tried this, and have found it incredibly effective. The features provided by YARA will allow users to start performing these techniques online. A basic authentication workflow will allow users to create an account and increase user engagement and experience, making it a necessary feature as well.
 
+To run the full app, you will first need to clone the yara-backend repo (https://github.com/kellyh2o/yara-backend) and follow the instructions in the README.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 
