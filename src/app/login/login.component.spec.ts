@@ -25,7 +25,7 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should dispatch login credentails', () => {
+  it('should dispatch a login action via the facade on submit', () => {
     const dispatchSpy = spyOn(store, 'dispatch');
     const action = requestLogin({ username: '', password: '' });
     component.submit();

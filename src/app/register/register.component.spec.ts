@@ -25,7 +25,7 @@ describe('RegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should dispatch regiser information', () => {
+  it('should dispatch a register action via the facade on submit', () => {
     const dispatchSpy = spyOn(store, 'dispatch');
     const action = requestRegistration({ email: '', username: '', password: '' });
     component.submit();

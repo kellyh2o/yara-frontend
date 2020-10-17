@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { ApplicationState } from '../store/models/application-state.model';
-import { requestRegistration } from '../store';
+import { UserFacade } from '../store/facades/user.facade';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +12,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<ApplicationState>
+    private userFacade: UserFacade
   ) {}
 
   ngOnInit(): void {
@@ -27,6 +25,6 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     const { email, username, password } = this.registerForm.value;
-    this.store.dispatch(requestRegistration({ email, username, password }));
+    this.userFacade.register(email, username, password);
   }
 }

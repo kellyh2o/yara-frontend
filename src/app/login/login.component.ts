@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { ApplicationState } from '../store/models/application-state.model';
-import { requestLogin } from '../store';
+import { UserFacade } from '../store/facades/user.facade';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<ApplicationState>
+    private userFacade: UserFacade,
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +24,6 @@ export class LoginComponent implements OnInit {
 
   submit() {
     const { username, password } = this.loginForm.value;
-    this.store.dispatch(requestLogin({ username, password }));
+    this.userFacade.login(username, password);
   }
 }
