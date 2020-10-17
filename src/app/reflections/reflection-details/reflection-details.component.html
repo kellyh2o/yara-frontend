@@ -1,5 +1,7 @@
-<ng-container *ngIf="reflection$ | async as reflection">
-    <h2 id="selected-reflection-title">{{ reflection.title }}</h2>
-    <div id="selected-reflection-date">{{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}</div>
-    <div id="selected-reflection-text">{{ reflection.text }}</div>
-  </ng-container>
+<div class="container-width-full reflection-detail">
+  <ng-container *ngIf="reflection$ | async as reflection">
+      <h2 id="selected-reflection-title">{{ reflection.title }}</h2>
+      <div id="selected-reflection-date">{{ reflection.createdAt | date: 'MMM d, y, h:mm a' }}</div>
+      <div id="selected-reflection-text">{{ reflection.text }}</div>
+    </ng-container>
+</div>
